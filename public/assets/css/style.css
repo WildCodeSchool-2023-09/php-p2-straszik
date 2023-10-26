@@ -1,3 +1,4 @@
-body {
-    color: #f76c6c;
-}
+@import url("https://cdn.jsdelivr.net/npm/uikit@3.17.5/dist/css/uikit.min.css");
+
+@import url("_variables.css");
+@import url("_navbar.css");
