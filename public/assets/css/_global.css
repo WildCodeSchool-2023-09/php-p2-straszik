@@ -1,8 +1,5 @@
-html, body {
-    height: 100vh;
-}
-
 body {
     display: grid;
     grid-template-rows: auto 1fr auto;
+    height: 100vh;
 }
