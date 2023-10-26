@@ -1,0 +1,27 @@
+.uk-navbar-container {
+    background: var(--background) ;
+}
+
+div.uk-navbar-left a img.logo {
+    width: 6rem;
+}
+
+div.uk-navbar-left, div.uk-navbar-right {
+    padding: 0.5rem 1rem;
+}
+
+.uk-navbar-nav>li>a:hover {
+    color: var(--secondary);
+}
+
+@media (min-width: 960px){
+    .uk-navbar-left, .uk-navbar-right, [class*=uk-navbar-center] {
+        gap: 10px;
+    }
+}
+
+div.uk-offcanvas-bar {
+    top: 7rem;
+    bottom: unset;
+    width: 15rem;
+}
