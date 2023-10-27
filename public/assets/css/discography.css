@@ -2,9 +2,6 @@
     font-family: var(--font-family);
     color: var(--secondary);
 }
-.uk-container {
-    background-color: var(--background);
-}
 .uk-text-large {
     text-align: center;
     padding:2rem;
