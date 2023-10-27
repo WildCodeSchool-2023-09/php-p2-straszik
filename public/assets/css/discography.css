@@ -1,0 +1,92 @@
+:root {
+    --primary:#df6f77;
+    --secondary:#fff;
+    --background:#0f0f0f;
+    --cards_background:#dabd8f;
+    --font-family:'Yanone Kaffeesatz', sans-serif;
+}
+.uk-heading-line {
+    font-family: var(--font-family);
+    color: var(--secondary);
+}
+.uk-container {
+    background-color: var(--background);
+}
+.uk-text-large {
+    text-align: center;
+    padding:2rem;
+    color:var(--primary);
+    font-family: var(--font-family);
+    font-size: 2rem;
+}
+.uk-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.uk-card-default {
+    background-color: var(--cards_background);
+    width:23rem;
+    font-family: var(--font-family);
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    margin: 1rem;
+    max-height: 52rem;
+    margin-bottom: 5rem;
+}
+.uk-card-media-top {
+    width:100%;
+    max-height:368px;
+}
+.uk-card-title {
+    font-weight: bold;
+    font-family: var(--font-family);
+    font-size:2.2rem;
+    padding-top:1.5rem;
+    line-height:0;
+}
+.albumYear {
+    margin:0;
+    font-weight: bold;
+    font-family: var(--font-family);
+    color:var(--background);
+}
+h6 {
+    font-family: var(--font-family);
+    color:var(--background);
+    font-size: 1.5rem;
+}
+.uk-card-body {
+    display: grid;
+    grid-template-rows: 1fr 1fr auto;
+    font-size: large;
+    align-items:flex-start;
+    height: max-content;
+    padding-bottom: 0;
+    line-height: 1.2;
+}
+.uk-table td {
+    padding-top:0;
+    padding-bottom:0;
+}
+.uk-h6, h6 {
+    line-height:0;
+    margin-top: 20px;
+}
+@media screen and (min-width: 768px) and (max-width: 992px){
+    .uk-card {
+        grid-template-columns: 1fr 1fr;
+    }
+    .uk-card-default {
+        grid-template-columns: 1fr;
+        width: auto;
+    }
+}
+@media screen and (max-width: 768px){
+    .uk-card {
+        grid-template-columns: 1fr;
+    }
+    .uk-card-default {
+        grid-template-columns: 1fr;
+        width: auto;
+    }
+}
