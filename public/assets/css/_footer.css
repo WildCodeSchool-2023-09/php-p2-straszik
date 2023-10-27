@@ -1,0 +1,9 @@
+footer {
+    background-color: var(--background);
+}
+
+.uk-svg {
+    fill: var(--secondary);
+    width: 2rem;
+}
+
