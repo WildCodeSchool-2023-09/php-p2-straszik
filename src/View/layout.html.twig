@@ -13,7 +13,11 @@
 
 <body>
     {% include 'Include/_navbar.html.twig'%}
-    {% block content %}{% endblock %}
+    <main class="uk-container uk-margin-medium-top">
+        {% block content %}{% endblock %}
+    </main>
+    {% include 'Include/_footer.html.twig'%}
     {% block javascript %}<script src="https://cdn.jsdelivr.net/npm/uikit@3.17.5/dist/js/uikit.min.js"></script>{% endblock %}
+    
 </body>
 </html>

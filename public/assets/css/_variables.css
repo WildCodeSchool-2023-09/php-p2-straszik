@@ -3,5 +3,5 @@
     --secondary: #fff;
     --background: #0f0f0f;
     --cards_background: #dabd8f;
-    --font-family: 'Yanone Kaffeesatz', sans-serif;
+    --font-family: 'Yanone Kaffeesatz', sans-serif, "-apple-system,BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
