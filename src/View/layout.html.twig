@@ -5,7 +5,6 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/assets/images/favicon.png">
-
     <title>{% block title %}{% endblock %}</title>
 
     <link rel="stylesheet" href="/assets/css/style.css">
@@ -13,9 +12,14 @@
 </head>
 
 <body>
-    {% block content %}{% endblock %}
+
+    {% include 'Include/_navbar.html.twig'%}
+    <main class="uk-container uk-margin-medium-top">
+        {% block content %}{% endblock %}
+    </main>
+    {% include 'Include/_footer.html.twig'%}
     {% block javascript %}<script src="https://cdn.jsdelivr.net/npm/uikit@3.17.5/dist/js/uikit.min.js"></script>{% endblock %}
+    
+
 </body>
 </html>
-
-

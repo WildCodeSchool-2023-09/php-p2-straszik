@@ -1,0 +1,35 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<section>   
+    <h1 class="uk-heading-line uk-text-center"><span>Discographie</span></h1
+    <div class="uk-child-width-1-2@m"uk-grid>
+        <h3 class="uk-text-large"> Des compositions originales 100% rock’n roll qui font sonner des textes 100% en dialecte.<br/>
+        Les albums sont à consommer sans modération !</h3>
+        <div class="uk-card">
+            {% for album in albums %}
+            <div class="uk-card uk-card-default">
+                <div class="uk-card-media-top">
+                    <img src="assets/images/albums/{{album.image}}" alt="image album1">
+                </div>
+                <div class="uk-card-body">
+                    <h2 class="uk-card-title">{{album.title}}</h2>
+                    <p class="albumYear">{{album.year}}</p>
+                    <table class="uk-table">
+                        <h6>Playlist</h6>
+                        <tbody>
+                            {% for song in songs %}
+                            {% if song.album_id == album.id %} 
+                               <tr>
+                                    <td>{{song.title}}</td>
+                                    <td>{{song.time}}</td>
+                                </tr>
+                            {% endif %}
+                            {% endfor %}
+                         </tbody>
+                    </table>
+                </div>
+            </div>
+            {% endfor %}
+</section>
+{% endblock %}
