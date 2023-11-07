@@ -1,82 +1,78 @@
-.uk-heading-line {
+#actu-heading-line {
     font-family: var(--font-family);
     color: var(--secondary);
 }
-.uk-text-large {
+#actu_h3 {
     text-align: center;
     padding:2rem;
     color:var(--primary);
     font-family: var(--font-family);
     font-size: 2rem;
 }
-.uk-card {
+#actu-cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
-.uk-card-default {
+#actu-uk-card{
     background-color: var(--cards_background);
     width:23rem;
     font-family: var(--font-family);
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 2fr;
     margin: 1rem;
-    max-height: 52rem;
+    max-height: 54rem;
     margin-bottom: 5rem;
     border-radius: .5rem;
+    padding-bottom:1.5rem;
 }
-.uk-card-media-top {
+#actu-card-top {
     width:100%;
-    max-height:368px;
+    height:368px;
 }
-.uk-card-title {
+#actu-card-title {
     font-weight: bold;
     font-family: var(--font-family);
     font-size:2.2rem;
     padding-top:1.5rem;
-    line-height:0;
+    line-height:1.8rem;
 }
-.albumYear {
-    margin:0;
-    font-weight: bold;
-    font-family: var(--font-family);
-    color:var(--background);
-}
-h6 {
-    font-family: var(--font-family);
-    color:var(--background);
-    font-size: 1.5rem;
-}
-.uk-card-body {
+#actu-card-body {
     display: grid;
-    grid-template-rows: 1fr 1fr auto;
+    grid-template-rows: 1fr auto auto;
     font-size: large;
     align-items:flex-start;
-    height: max-content;
     padding-bottom: 0;
-    line-height: 1.2;
 }
-.uk-table td {
-    padding-top:0;
-    padding-bottom:0;
+#describeActu {
+    margin-top:0;
+    margin:0;
 }
-.uk-h6, h6 {
-    line-height:0;
-    margin-top: 20px;
+h2 {
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 4rem;
+    font-family: var(--font-family);
+}
+iframe {
+    align-items: center;
+    width:640px;
+    height:360px;
+    margin-bottom: 4rem;
 }
 @media screen and (min-width: 768px) and (max-width: 992px){
-    .uk-card {
+    #actu-cards{
         grid-template-columns: 1fr 1fr;
     }
-    .uk-card-default {
+    #actu-uk-card {
         grid-template-columns: 1fr;
         width: auto;
     }
 }
 @media screen and (max-width: 768px){
-    .uk-card {
+    #actu-cards {
         grid-template-columns: 1fr;
     }
-    .uk-card-default {
+    #actu-uk-card {
         grid-template-columns: 1fr;
         width: auto;
     }
