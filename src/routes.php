@@ -13,6 +13,7 @@ return [
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
+    'groupe' => ['GroupeController', 'index',],
     'discographie' => ['DiscographyController', 'index',],
     'actus' => ['ActusController', 'index',],
 ];
