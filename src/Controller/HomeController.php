@@ -14,10 +14,10 @@ class HomeController extends AbstractController
         $errors = [];
         $validateInscription = false;
         $data = array_map('trim', $_POST);
-        $data = array_map('htmlentities', $data);
+
         $asideManager = new AsideManager();
         if ($_SERVER['REQUEST_METHOD'] === "POST") {
-            $errors = $asideManager->verifNewsletter($data);
+            $errors = $this->verifNewsletter($data);
 
             if (empty($errors)) {
                 $asideManager->insert($data['email']);
@@ -27,5 +27,20 @@ class HomeController extends AbstractController
 
         return $this->twig->render('Home/index.html.twig', ["errors" => $errors,
         "validateInscription" => $validateInscription]);
+    }
+
+    public function verifNewsletter(array $verif): array
+    {
+        $errors = [];
+
+        if (empty($verif["email"])) {
+            $errors[] = "Veuillez remplir le champ !";
+        }
+
+        if (!filter_var($verif["email"], FILTER_VALIDATE_EMAIL)) {
+            $errors[] = "Le mail n'est pas valide !";
+        }
+
+        return $errors;
     }
 }
