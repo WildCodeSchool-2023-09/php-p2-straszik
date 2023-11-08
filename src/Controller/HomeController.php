@@ -25,7 +25,7 @@ class HomeController extends AbstractController
             }
         }
 
-        return $this->twig->render('Home/index.html.twig', ["errors" => $errors, 
+        return $this->twig->render('Home/index.html.twig', ["errors" => $errors,
         "validateInscription" => $validateInscription]);
     }
 }
