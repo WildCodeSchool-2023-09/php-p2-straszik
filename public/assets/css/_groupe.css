@@ -6,55 +6,52 @@ h1, h2 {
     color: var(--secondary);
 }
 
-.uk-card {
+.card-group,.card-artist {
     background: var(--cards_background);
     margin-left: 10rem;
     margin-top: 5rem;
     border-radius: .5rem;
     margin-right: 10rem;
+    width: auto;
 }
 
-.uk-card-body {
+.card-group.uk-card-body {
     padding: 30px;
     background-color: var(--cards_background);
     font-size: 20px;
-
+    width: auto;
 }
 
-[class*=uk-width] {
-    padding-left: 30px;
-}
-
-.uk-card-default .uk-card-title {
+.card-group .uk-card-title,.card-artist .uk-card-title {
     color: var(--primary);
 }
 
-section {
+section.card-heading {
     margin-top: 5rem;
     margin-left: 12rem;
 }
 
-.uk-card img {
+.card-group img,.card-artist img {
     border-bottom-left-radius: .5rem;
     border-top-left-radius: .5rem;
 }
 
 @media (max-width: 768px) { 
-    .uk-card {
+    .card-group,.card-artist {
     margin-left: 5rem;
     margin-right: 5rem;
     }
-    section {
+    section.card-heading {
         margin-left: 7rem;
     }
 }
 
 @media (max-width: 425px) { 
-    .uk-card {
+    .card-group,.card-artist  {
     margin-left: 1rem;
     margin-right: 1rem;
     }
-    section {
+    section.card-heading {
         margin-left: 3rem;    
     }
 }
