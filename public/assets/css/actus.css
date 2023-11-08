@@ -1,19 +1,20 @@
-#actu-heading-line {
+.actu-heading-line {
     font-family: var(--font-family);
     color: var(--secondary);
 }
-#actu_h3 {
+.uk-text-large {
     text-align: center;
     padding:2rem;
     color:var(--primary);
     font-family: var(--font-family);
     font-size: 2rem;
 }
-#actu-cards {
+.actu-cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    padding-left:0;
 }
-#actu-uk-card{
+.actu-uk-card{
     background-color: var(--cards_background);
     width:23rem;
     font-family: var(--font-family);
@@ -24,30 +25,35 @@
     margin-bottom: 5rem;
     border-radius: .5rem;
     padding-bottom:1.5rem;
+    padding-left:0;
 }
-#actu-card-top {
+.actu-card-top {
     width:100%;
     height:368px;
 }
-#actu-card-title {
+.actu-img {
+    width:"100%";
+    padding-left: 0;
+}
+.actu-card-title {
     font-weight: bold;
     font-family: var(--font-family);
     font-size:2.2rem;
     padding-top:1.5rem;
     line-height:1.8rem;
 }
-#actu-card-body {
+.actu-card-body {
     display: grid;
     grid-template-rows: 1fr auto auto;
     font-size: large;
     align-items:flex-start;
     padding-bottom: 0;
 }
-#describeActu {
+.describeActu {
     margin-top:0;
     margin:0;
 }
-h2 {
+.titreActu {
     color: var(--primary);
     text-align: center;
     margin-bottom: 4rem;
@@ -60,19 +66,19 @@ iframe {
     margin-bottom: 4rem;
 }
 @media screen and (min-width: 768px) and (max-width: 992px){
-    #actu-cards{
+    .actu-cards{
         grid-template-columns: 1fr 1fr;
     }
-    #actu-uk-card {
+    .actu-uk-card {
         grid-template-columns: 1fr;
         width: auto;
     }
 }
 @media screen and (max-width: 768px){
-    #actu-cards {
+    .actu-cards {
         grid-template-columns: 1fr;
     }
-    #actu-uk-card {
+    .actu-uk-card {
         grid-template-columns: 1fr;
         width: auto;
     }
