@@ -16,4 +16,5 @@ return [
     'groupe' => ['GroupeController', 'index',],
     'discographie' => ['DiscographyController', 'index',],
     'actus' => ['ActusController', 'index',],
+    'contact' => ['ContactController', 'index',],
 ];

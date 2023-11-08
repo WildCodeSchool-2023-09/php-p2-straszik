@@ -1,0 +1,27 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<section class="contact-section">   
+    <h1 class="uk-heading-line uk-text-center contact-heading-line"><span>Contact</span></h1>
+    <h2 class="titreContact">Si vous souhaitez avoir plus d'informations, merci de compléter le formulaire ci-dessous</h2>
+    <form class="uk-form-stacked contact-form">
+        <div class="uk-margin contact-margin">
+            <label class="uk-form-label contact-form-label" for="form-stacked-select">Sélectionner le type de demande</label>
+            <div class="uk-form-controls contact-form-controls">
+                <select class="uk-select contact-select" id="form-stacked-select">
+                    <option class="contact-option">Concerts</option>
+                    <option class="contact-option">Goodies</option>
+                    <option class="contact-option">Boutique</option>
+                    <option class="contact-option">Autre</option>
+                </select>
+            </div>
+        </div>
+        <div class="uk-margin contact-margin">
+            <label class="uk-form-label contact-form-label" for="form-stacked-text">Saisir votre email</label>
+            <div class="uk-form-controls contact-form-controls">
+                <input class="uk-input contact-input" id="form-stacked-text" type="text" placeholder="Email">
+            </div>
+        </div>
+</form>
+
+{% endblock %}
