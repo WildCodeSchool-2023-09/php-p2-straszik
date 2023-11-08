@@ -15,4 +15,5 @@ return [
     'items/delete' => ['ItemController', 'delete',],
     'groupe' => ['GroupeController', 'index',],
     'discographie' => ['DiscographyController', 'index',],
+    'actus' => ['ActusController', 'index',],
 ];

@@ -1,0 +1,26 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<section>   
+    <h1 class="uk-heading-line uk-text-center actu-heading-line"><span>Actualités</span></h1>
+    <h2 class="titreActu">Retrouvez les dernières actus du groupe !</h2>
+    <div class="uk-child-width-1-2@m actu-uk-hild">
+        <div class="uk-card actu-cards" uk-grid>
+            {% for new in news %}
+            <div class="uk-card uk-card-default actu-uk-card">
+                <div class="uk-card-media-top actu-card-top">
+                    <img src="/assets/images/actus/{{new.image}}" height="368px" alt="image actu" class="actu-img">
+                </div>
+                <div class="uk-card-body actu-card-body">
+                    <h2 class="uk-card-title actu-card-title">{{new.title}}</h2>
+                    <p class="card-text describeActu">{{new.description}}</p>
+                </div>
+            </div>
+            {% endfor %}
+    </div>        
+</section>
+<section>
+    <h2 class="titreActu">Découvrez en exclusivité notre nouveau clip !</h2>
+    <iframe class="uk-align-center" src="https://www.youtube.com/embed/RCosidcToFY"></iframe>
+</section>
+{% endblock %}
