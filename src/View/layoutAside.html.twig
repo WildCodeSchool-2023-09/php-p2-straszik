@@ -14,7 +14,8 @@
 <body>
     {% include 'Include/_navbar.html.twig'%}
     
-    <main class="uk-container uk-margin-medium-top">
+    <main class="uk-container-fluid uk-margin-medium-top" uk-grid>
+        {% include 'Include/_aside.html.twig' %}
         {% block content %}{% endblock %}
     </main>
     {% include 'Include/_footer.html.twig'%}

@@ -3,3 +3,7 @@ body {
     grid-template-rows: auto 1fr auto;
     background-color: var(--background);
 }
+
+main * {
+    font-family: var(--font-family);
+}
