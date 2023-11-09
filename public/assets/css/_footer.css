@@ -2,8 +2,12 @@ footer {
     background-color: var(--background);
 }
 
-.uk-svg {
+footer .uk-svg {
     fill: var(--secondary);
     width: 2rem;
 }
 
+
+footer .uk-svg:hover {
+    fill: var(--primary);
+}
