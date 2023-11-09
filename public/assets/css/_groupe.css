@@ -2,16 +2,23 @@ body {
     background-color: var(--background);
 }
 
-h1, h2 {
+h1 {
     color: var(--secondary);
 }
-
+h2 {
+    color: var(--primary);
+    font-family: var(--font-family);
+    font-size: 40px;
+}
+p { 
+    margin-top: 0;
+}
 .card-group,.card-artist {
     background: var(--cards_background);
-    margin-left: 10rem;
+    margin-left: 1rem;
     margin-top: 5rem;
     border-radius: .5rem;
-    margin-right: 10rem;
+    margin-right: 1rem;
     width: auto;
 }
 
@@ -20,6 +27,7 @@ h1, h2 {
     background-color: var(--cards_background);
     font-size: 20px;
     width: auto;
+    margin-top: 7rem;
 }
 
 .card-group .uk-card-title,.card-artist .uk-card-title {
@@ -28,7 +36,7 @@ h1, h2 {
 
 section.card-heading {
     margin-top: 5rem;
-    margin-left: 12rem;
+    margin-left: 2.5rem;
 }
 
 .card-group img,.card-artist img {
@@ -37,7 +45,7 @@ section.card-heading {
 }
 
 @media (max-width: 768px) { 
-    .card-group,.card-artist {
+    .card-group,.card-artist, h2 {
     margin-left: 5rem;
     margin-right: 5rem;
     }
@@ -47,13 +55,17 @@ section.card-heading {
 }
 
 @media (max-width: 425px) { 
-    .card-group,.card-artist  {
+    .card-group,.card-artist, h2  {
     margin-left: 1rem;
     margin-right: 1rem;
     }
     section.card-heading {
         margin-left: 3rem;    
     }
+    .card-group.uk-card-body {
+        height: 25rem;
+    }
+
 }
 
 
