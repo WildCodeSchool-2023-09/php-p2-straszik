@@ -36,7 +36,7 @@ p {
 
 section.card-heading {
     margin-top: 5rem;
-    margin-left: 2.5rem;
+
 }
 
 .card-group img,.card-artist img {
@@ -49,9 +49,7 @@ section.card-heading {
     margin-left: 5rem;
     margin-right: 5rem;
     }
-    section.card-heading {
-        margin-left: 7rem;
-    }
+
 }
 
 @media (max-width: 425px) { 
@@ -61,9 +59,6 @@ section.card-heading {
     }
     section.card-heading {
         margin-left: 3rem;    
-    }
-    .card-group.uk-card-body {
-        height: 25rem;
     }
 
 }

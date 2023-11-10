@@ -8,17 +8,17 @@
         <p>Le groupe a été créer en 1986 par Philippe Metz et David Weber, dans ce quintet du pays de Barr, deux générations de musiciens célèbrent leur amour du rock et leur attachement au dialecte. Des thèmes intemporels sur une musique résolument actuelle. Leur premier album "A Stùrz e de Nàcht" sort en 2016,et génère toute une série de concerts de part et d'autre du Rhin et mène le groupe jusqu'aux Etats-Unis.Deux autres albums sont sortis depuis.</p>
     </div>
 
-    <section class="uk-heading card-heading">
+    <section class="uk-heading card-heading uk-text-center">
         <h2>Membres du groupe</h2>
     </section>
      
     {% for artist in artists %}    
-        <div class="card-artist uk-card">
+        <div class="card-artist uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin-large " uk-grid>
             <div class="uk-card-media-left uk-cover-container">
                 <img src="assets/images/{{ artist.img }}" alt="{{ artist.name }}" uk-cover>
                 <canvas width="600" height="400"></canvas>
             </div>
-            <div class="uk-card-body">
+            <div class="uk-card-body uk-padding">
                 <h3 class="uk-card-title">{{ artist.name }}</h3>
                 <section>
                 <p>{{ artist.desc }}</p>
