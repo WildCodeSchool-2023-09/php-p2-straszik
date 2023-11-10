@@ -6,13 +6,12 @@ use App\Model\ContactManager;
 
 class ContactController extends AbstractController
 {
-
     public function index(): string
     {
         $contactManager = new ContactManager();
         $errors = [];
         $validateContact = false;
-        
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $contacts = array_map('trim', $_POST);
             $errors = $this->validateContact($contacts);
@@ -22,8 +21,8 @@ class ContactController extends AbstractController
                 $validateContact = true;
             }
         }
-        return $this->twig->render('Contact/contact.html.twig', ['errors'=>$errors, 
-        'validateContact'=>$validateContact]);
+        return $this->twig->render('Contact/contact.html.twig', ['errors' => $errors,
+        'validateContact' => $validateContact]);
     }
 
     public function validateContact(array $contacts): array
