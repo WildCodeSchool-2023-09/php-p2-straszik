@@ -1,62 +1,64 @@
 {% extends 'layoutAside.html.twig' %}
 
 {% block content %}
-	<h1>
-		Les Assoiffés
-	</h1>
-	<section class='homeslider'>
-		<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="finite: false; autoplay: true; center: true">
-			<ul class="uk-slider-items uk-grid uk-grid-match" uk-height-viewport="offset-top: true; offset-bottom: 30">
-				<li class="uk-width-3-4">
-					<div class="uk-cover-container">
-						<img src="../../../assets/images/home/image1-v2.png" alt="" uk-cover>
-						<div class="uk-position-center uk-panel"></div>
-					</div>
-				</li>
-				<li class="uk-width-3-4">
-					<div class="uk-cover-container">
-						<img src="../../../assets/images/home/image2-v2.png" alt="" uk-cover>
-						<div class="uk-position-center uk-panel"></div>
-					</div>
-				</li>
-				<li class="uk-width-3-4">
-					<div class="uk-cover-container">
-						<img src="../../../assets/images/home/image4.jpg" alt="" uk-cover>
-						<div class="uk-position-center uk-panel"></div>
-					</div>
-				</li>
-				<li class="uk-width-3-4">
-					<div class="uk-cover-container">
-						<img src="../../../assets/images/home/image3.jpg" alt="" uk-cover>
-						<div class="uk-position-center uk-panel"></div>
-					</div>
-				</li>
-			</ul>
-
-			<a class="uk-position-center-left uk-position-small uk-hidden-hover" href uk-slidenav-previous uk-slider-item="previous"></a>
-			<a class="uk-position-center-right uk-position-small uk-hidden-hover" href uk-slidenav-next uk-slider-item="next"></a>
-		</div>
-	</section>
-
-	<section class='homeactuality'>
-		<h1 class="uk-heading-line uk-text-center actu-heading-line">
-			<span>Actualités</span>
+	<div class="uk-width-1-2@s uk-text-center ">
+		<h1>
+			Les Assoiffés
 		</h1>
-		<h2 class="titreActu">Retrouvez les dernières actus du groupe !</h2>
-		<div class="uk-child-width-1-2@m actu-uk-hild">
-			<div class="uk-card actu-cards" uk-grid>
-				{% for new in news %}
-					<div class="uk-card uk-card-default actu-uk-card">
-						<div class="uk-card-media-top actu-card-top">
-							<img src="/assets/images/actus/{{new.image}}" height="368px" alt="image actu" class="actu-img">
+		<section class='homeslider'>
+			<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="finite: false; autoplay: true; center: true">
+				<ul class="uk-slider-items uk-grid uk-grid-match" uk-height-viewport="offset-top: true; offset-bottom: 30">
+					<li class="uk-width-3-4">
+						<div class="uk-cover-container">
+							<img src="../../../assets/images/home/image1-v2.png" alt="" uk-cover>
+							<div class="uk-position-center uk-panel"></div>
 						</div>
-						<div class="uk-card-body actu-card-body">
-							<h2 class="uk-card-title actu-card-title">{{new.title}}</h2>
-							<p class="card-text describeActu">{{new.description}}</p>
+					</li>
+					<li class="uk-width-3-4">
+						<div class="uk-cover-container">
+							<img src="../../../assets/images/home/image2-v2.png" alt="" uk-cover>
+							<div class="uk-position-center uk-panel"></div>
 						</div>
-					</div>
-				{% endfor %}
+					</li>
+					<li class="uk-width-3-4">
+						<div class="uk-cover-container">
+							<img src="../../../assets/images/home/image4.jpg" alt="" uk-cover>
+							<div class="uk-position-center uk-panel"></div>
+						</div>
+					</li>
+					<li class="uk-width-3-4">
+						<div class="uk-cover-container">
+							<img src="../../../assets/images/home/image3.jpg" alt="" uk-cover>
+							<div class="uk-position-center uk-panel"></div>
+						</div>
+					</li>
+				</ul>
+
+				<a class="uk-position-center-left uk-position-small uk-hidden-hover" href uk-slidenav-previous uk-slider-item="previous"></a>
+				<a class="uk-position-center-right uk-position-small uk-hidden-hover" href uk-slidenav-next uk-slider-item="next"></a>
 			</div>
-		</div>
-	</section>
+		</section>
+
+		<section class='homeactuality'>
+			<h1 class="uk-heading-line uk-text-center actu-heading-line">
+				<span>Actualités</span>
+			</h1>
+			<h2 class="titreActu">Retrouvez les dernières actus du groupe !</h2>
+			<div class="uk-child-width-1-2@m actu-uk-hild">
+				<div class="uk-card actu-cards" uk-grid>
+					{% for new in news %}
+						<div class="uk-card uk-card-default actu-uk-card">
+							<div class="uk-card-media-top actu-card-top">
+								<img src="/assets/images/actus/{{new.image}}" height="368px" alt="image actu" class="actu-img">
+							</div>
+							<div class="uk-card-body actu-card-body">
+								<h2 class="uk-card-title actu-card-title">{{new.title}}</h2>
+								<p class="card-text describeActu">{{new.description}}</p>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</section>
+	</div>
 {% endblock %}
