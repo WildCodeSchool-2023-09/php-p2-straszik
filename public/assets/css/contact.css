@@ -4,13 +4,95 @@
 .titreContact {
     color: var(--primary);
     margin-bottom: 4rem;
+    margin-top: 6rem;
+    text-align: center;
 }
-
-
-
+.contact-section {
+    display: grid;
+    width: 100%;
+    margin-top: 2rem;
+    align-items: center;
+}
+.contact-margin {
+    margin-bottom: 2rem;
+}
+.contact-form-label {
+    font-size: medium;
+    color: var(--secondary);
+}
+.contact-select, .contact-input {
+    background-color: var(--cards_background);
+    color: var(--background);
+    width: 30rem;
+}
+.contact-form{
+    display: grid;
+    margin-bottom: 6rem;
+    justify-content: center;
+}
+.contact-message {
+    height:8rem;
+    background-color: var(--cards_background);
+}
+.contact-button {
+    background-color: var(--primary);
+    color: var(--background);
+    border-radius: .5rem;
+}
+.contact-newsletter-text {
+    color: var(--secondary);
+    text-align: left;
+}
+.insc-newsletter {
+    background-color: var(--background);
+    text-align: left;
+    border-radius: .5rem;
+}
+.contact-card-body {
+    text-align: left;
+}
+.titreInscpContact{
+    color: var(--primary)!important;
+    margin:0;
+    text-align: left;
+}
+.contact-margin {
+    width:auto;
+    border-radius: .5rem;
+}
+.contact-inline{
+    width: 16rem;
+}
+.contact-insc-button {
+    background-color: var(--primary);
+    color: var(--background);
+    border-radius: .5rem;
+    margin-left: 0.5rem;
+}
+.contact-input {
+    margin-right: 1rem;
+}
+.contact-rgpd {
+    margin-top: 1rem;
+    text-align: left;
+    font-size: x-small;
+}
+.contact-checkbox {
+    color: var(--secondary);
+    font-size: small;
+}
+.contact-mess-errors {
+    color:var(--primary);
+    padding:0;
+    margin-top:0.5rem;
+    margin-bottom: 0;
+    
+}
 @media screen and (min-width: 768px) and (max-width: 992px){
-
-}
-@media screen and (max-width: 768px){
-
+    .contact-insc-button {
+        margin-top: 1rem;
+    }
+    .contact-card-body {
+       padding-right: 0;
+    }
 }
