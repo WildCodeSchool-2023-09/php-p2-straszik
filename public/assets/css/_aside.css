@@ -1,6 +1,11 @@
+aside * {
+    color: var(--secondary);
+}
+
 aside input {
     color: black;
 }
+
 
 ul.aside_list, ul.aside_errors {
     margin-top: 0.3rem;
