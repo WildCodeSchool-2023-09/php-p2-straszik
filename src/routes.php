@@ -18,4 +18,5 @@ return [
     'actus' => ['ActusController', 'index',],
     'concerts' => ['ConcertController', 'index',],
     'billetterie' => ['BilletterieController', 'index',],
+    'contact' => ['ContactController', 'index',],
 ];
