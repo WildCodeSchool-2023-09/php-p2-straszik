@@ -1,0 +1,23 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    
+<h1 class='uk-heading-line uk-text-center concert-heading-line'><span>Les Concerts</span></h1>
+ {% for concert in concerts %}
+<div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin concert-card" uk-grid>   
+    <div class="uk-flex-last@s uk-card-media-right uk-cover-container concert-media-right">
+        <img src="assets/images/{{concert.affiche }}" alt="affiche" uk-cover>
+        <canvas width="600" height="400"></canvas>
+    </div>
+    <div>
+        <div class="uk-card-body concert-card-body">
+            <h3 class="uk-card-title concert-card-title">Les Assoifés en concert</h3>
+            <p>Date : {{ concert.date }}</br>Lieu : {{ concert.location }} </br> {{ concert.prix }}</p>
+            <button class='uk-button uk-button-default concert-button'>Réserver un billet</button>
+        </div>
+    </div>
+    </div>
+    {% endfor %}
+
+
+{% endblock %}

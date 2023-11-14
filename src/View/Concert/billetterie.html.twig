@@ -1,0 +1,50 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+<?php
+
+    $user = "Ronny";
+    $pass = "Ronny972";
+    
+    $bdd = new PDO('mysql:host=localhost;dbname=straszik', $user, $pass);
+    
+    $query = "SELECT * FROM concert WHERE id =".$_GET['id'];
+    $statement = $bdd->query($query);
+
+    $concert= $statement->fetch(PDO::FETCH_ASSOC); // same as $statement->fetchAll()
+    ?> 
+    </head>
+
+<body>
+    
+
+<h1> <b> Billeterie </b></h1>
+<div class="Disposition">
+    <div class="Form">
+        <div>
+            <div class="titre"><b> Les Assoifés </b></div>
+            <div> <?php if ($concert['id'] == 1){
+                echo "Vendredi, ";
+            } elseif ($concert['id'] == 2){
+                echo "Samedi, ";
+            } else {
+                echo "Dimanche, ";
+            }
+                echo $concert['date']; ?>| 20h </div>
+            <div> STRASBOURG| <?php echo $concert['location'];?> </div> 
+            <div> Place disponible(s): <?php echo $concert['places_availables'];?> </div>
+        </div>
+        <img id="cover" src="assets/images/digipack_avant.png.webp">
+    </div>
+    <form id="reserve" method="post">
+        <div id='Prix'>
+            <label class="titre"><b> Nombre de billets</b></label>
+            <input type="number" id="num_tickets" name="num_tickets" min=1 max=10 placeholder="0"> <div>Prix: <?php echo $concert['prix']."€"; ?> </div> 
+        </div>
+        <input type="submit" id="submit" value="Réserver" <?php echo $concert['places_availables'] <= 0 ? "disable='disable'" : '' ?> >
+    </div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.5/dist/js/uikit.min.js"></script></body>
+</html>
+{% endblock %}
