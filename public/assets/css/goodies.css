@@ -1,0 +1,8 @@
+.card_goodies {
+    height: 25rem;
+    background-color: var(--cards_background);
+}
+
+.card_goodies > .card_goodie_top {
+    background-color: var(--cards_background);
+}
