@@ -1,9 +1,17 @@
 <div id="modal-container{{goodie.id}}" class="uk-modal-container" uk-modal>
-    <div class="uk-modal-dialog uk-modal-body">
+    <div class="modal-goodie uk-modal-dialog uk-modal-body">
         <button class="uk-modal-close-default" type="button" uk-close></button>
-        <h2 class="uk-modal-title">{{ goodie.designation }}</h2>
-        <h3>{{ goodie.price }} €</h3>
-        <img src="assets/images/goodies/{{ goodie.picture }}"></img>
-        <p>{{ goodie.description }}</p>
+        <div class="">
+            <h2 class="uk-modal-title uk-text-center">{{ goodie.designation }}</h2>
+            <div class="uk-child-width-1-2" uk-grid>
+                <div>
+                    <img src="assets/images/goodies/{{ goodie.picture }}"></img>
+                </div>
+                <div class="uk-flex uk-flex-column">
+                    <p class="modal-goodie-desc uk-flex-auto">{{ goodie.description|nl2br }}</p>
+                    <h3 class="modal-price-goodie uk-flex-1 uk-font-bolder">{{ goodie.price }} €</h3>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

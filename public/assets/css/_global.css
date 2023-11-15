@@ -6,6 +6,5 @@ body {
 
 main * {
     font-family: var(--font-family);
-    color: var(--secondary);
 
 }
