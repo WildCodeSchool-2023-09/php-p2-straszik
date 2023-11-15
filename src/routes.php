@@ -17,4 +17,5 @@ return [
     'discographie' => ['DiscographyController', 'index',],
     'actus' => ['ActusController', 'index',],
     'goodies' => ['GoodiesController', 'index'],
+    'contact' => ['ContactController', 'index',],
 ];
