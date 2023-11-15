@@ -22,4 +22,5 @@ return [
     'admin/ActusAdmin/new' => ['ActusController', 'new',],
     'admin/ActusAdmin/edit' => ['ActusController', 'edit', ['id']],
     'admin/ActusAdmin/delete' => ['ActusController', 'delete', ['id']],
+    'admin/goodiesadmin' => ["GoodiesController", 'index'],
 ];
