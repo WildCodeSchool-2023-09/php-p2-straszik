@@ -11,15 +11,15 @@ class NewsletterController
         $errors = [];
 
         if (empty($verif["email"])) {
-            $errors[] = "Veuillez remplir le champ !";
+            $errors["emailNewsletter"] = "Veuillez remplir le champ !";
         }
 
         if (!filter_var($verif["email"], FILTER_VALIDATE_EMAIL)) {
-            $errors[] = "Le mail n'est pas valide !";
+            $errors["notEmailformatNewsletter"] = "Le mail n'est pas valide !";
         }
 
         if (!isset($verif['check_newsletter'])) {
-            $errors[] = "La case n'a pas été coché !";
+            $errors["notcheck"] = "La case n'a pas été coché !";
         }
 
         return $errors;
