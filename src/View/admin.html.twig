@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="/assets/images/favicon.png">
+        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.17.8/dist/css/uikit.min.css"/>
+        <link rel="stylesheet" href="/assets/css/style.css"> 
+        <link rel="stylesheet" href="/assets/css/admin.css"/> {% block stylesheet %}{% endblock %}
+        
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+
+    <body>
+        {% include 'Include/_navbar.html.twig'%}
+        <div uk-grid uk-flex>
+            <header class="uk-width-1-5 uk-padding admin-header">
+                {% include 'Admin/Include/__navbarAdmin.html.twig' %}
+            </header>
+
+            <main class="uk-width-expand uk-padding admin-main">
+                {% block content %}{% endblock %}
+            </main>
+        </div>
+        <!-- UIkit JS -->
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.8/dist/js/uikit.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.8/dist/js/uikit-icons.min.js"></script>
+            <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+        <!-- include summernote css/js -->
+        <script>
+            $(document).ready(function () {
+            $('#summernote').summernote();
+            });
+        </script>
+            {% block javascript %}{% endblock %}
+    </body>
+</html>
