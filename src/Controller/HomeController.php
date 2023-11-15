@@ -3,14 +3,15 @@
 namespace App\Controller;
 
 use App\Model\Component\AsideManager;
+use App\Model\HomeManager;
 
 class HomeController extends AbstractController
 {
-    /**
-     * Display home page
-     */
     public function index(): string
     {
+        $homeManager = new HomeManager();
+        $categories = $homeManager->selectLast3Categories();
+        $news = $homeManager->selectLast3News();
         $errors = [];
         $validateInscription = false;
         $data = array_map('trim', $_POST);
@@ -25,7 +26,8 @@ class HomeController extends AbstractController
             }
         }
 
-        return $this->twig->render('Home/index.html.twig', ["errors" => $errors,
+        return $this->twig->render('Home/index.html.twig', ['categories' => $categories, 'news' => $news
+        , "errors" => $errors,
         "validateInscription" => $validateInscription]);
     }
 

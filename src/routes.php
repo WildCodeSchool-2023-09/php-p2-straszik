@@ -17,4 +17,5 @@ return [
     'discographie' => ['DiscographyController', 'index',],
     'actus' => ['ActusController', 'index',],
     'concerts' => ['ConcertController', 'index',],
+    'contact' => ['ContactController', 'index',],
 ];
