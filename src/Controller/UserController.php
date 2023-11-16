@@ -26,7 +26,7 @@ class UserController extends AbstractController
                 if ($userData) {
                     $_SESSION['isLogin'] = true;
                     $_SESSION['user_id'] = $userData['id'];
-                    $_SESSION['status'] = $userData['status (admin/client)'];
+                    $_SESSION['status'] = $userData['status'];
                     header('location: /');
                 } else {
                     $errors['login'] = 'Mail ou Mot de passe incorrect !';
