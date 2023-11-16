@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Controller;
 
 use App\Controller\AbstractController;
@@ -26,4 +25,3 @@ class DashboardController extends AbstractController
         );
     }
 }
-
