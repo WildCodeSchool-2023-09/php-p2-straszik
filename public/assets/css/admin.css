@@ -1,0 +1,64 @@
+.admin-header {
+    background-color: var(--background);
+}
+
+.admin-main {
+    background-color: var(--secondary);
+}
+.admin-navbar {
+    background-color: var(--background);
+}
+.admin-navbar>li>a  {
+    color: var(--secondary);
+    font-size: 1rem;
+}
+.admin-heading-line {
+    color:var(--background);
+}
+body header {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.admin-header, .admin-aside {
+    padding-left: 1.5rem;
+    padding-right: 0.5rem;
+}
+
+.admin-h1 {
+    color: var(--primary);
+    font-size: 1.4rem;
+}
+
+.admin-h2 {
+    color: var(--primary);
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+.admin-card-body {
+    height: 8rem;
+    width: 16rem;
+    border-radius: 0.5rem;
+}
+.admin-h3-card {
+    padding-bottom:0;
+    margin-bottom: 0;
+}
+.admin-actus-cards {
+    margin-left: 2.5rem;
+}
+.admin-actu-card-body {
+    background-color: var(--cards_background);
+}
+th.admin-th {
+    color:var(--background);
+}
+.admin-ajout-button {
+    margin-left:0;
+    color: var(--secondary);
+}
+.admin-legend {
+    color:var(--primary);
+}

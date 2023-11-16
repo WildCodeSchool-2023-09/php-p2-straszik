@@ -36,6 +36,7 @@ h1 {
     border-radius: .5rem;
     padding-bottom:1.5rem;
     padding-left:0;
+
 }
 .actu-card-top {
     width:100%;
@@ -75,6 +76,13 @@ iframe {
     height:360px;
     margin-bottom: 4rem;
 }
+
+@media screen and (max-width: 640px) {
+    main.home.uk-grid {
+        margin-left : 0;
+    }
+}
+
 @media screen and (min-width: 768px) and (max-width: 992px){
     .actu-cards{
         grid-template-columns: 1fr 1fr;
