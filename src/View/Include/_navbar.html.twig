@@ -1,45 +1,82 @@
 <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
-    <div class="uk-navbar-left">
-        <a href="/" class="uk-navbar-item uk-logo"><img class="logo" src="/assets/images/logo_assoifes.png" alt="Logo Assoifés"></a>
-    </div>
-    <div class="uk-navbar-center uk-visible@m">
-        <ul class="uk-navbar-nav" uk-nav>
-            <li><a href="/">Accueil</a></li>
-            <li><a href="/groupe">Le groupe</a></li>
-            <li><a href="/discographie">Discographie</a></li>
-            <li><a href="/actus">Actualités</a></li>
-            <li><a href="/concerts">Concerts</a></li>
-            <li><a href="/goodies">Goodies</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-    </div>
-    <div class="uk-navbar-right uk-hidden@m">
-        <button class="uk-navbar-toggle uk-navbar-toggle-animate" uk-navbar-toggle-icon uk-toggle="target: #offcanvas-flip"></button>
-    </div>
-    <div class="uk-navbar-right uk-visible@m">
-        <a href="/" class="uk-navbar-item uk-logo iconMonCompte"><img src="/assets/images/icons/Icone_monCompte.svg" alt="Mon compte"></a>
-        <ul class="uk-navbar-nav">
-            <li><a href="/login">Mon compte</a></li>
-        </ul>
-    </div>
-    <div id="offcanvas-flip" uk-offcanvas="flip:true, overlay: true">
-        <div class="uk-offcanvas-bar">
-            <ul class="uk-nav">
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/groupe">Le groupe</a></li>
-                <li><a href="/discographie">Discographie</a></li>
-                <li><a href="/actus">Actualités</a></li>
-                <li><a href="/concerts">Concerts</a></li>
-                <li><a href="/goodies">Goodies</a></li>
-                <li><a href="/contact">Contact</a></li>
-                <li class="uk-nav-divider"></li>
-                <li>
-                    <div>
-                        <a href="/" class="uk-logo iconMonCompte"><img src="/assets/images/icons/Icone_monCompte.svg" alt="Mon compte"></a>
-                        <a href="/login">Mon compte</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+	<div class="uk-navbar-left">
+		<a href="/" class="uk-navbar-item uk-logo"><img class="logo" src="/assets/images/logo_assoifes.png" alt="Logo Assoifés"></a>
+	</div>
+	<div class="uk-navbar-center uk-visible@m">
+		<ul class="uk-navbar-nav" uk-nav>
+			<li>
+				<a href="/">Accueil</a>
+			</li>
+			<li>
+				<a href="/groupe">Le groupe</a>
+			</li>
+			<li>
+				<a href="/discographie">Discographie</a>
+			</li>
+			<li>
+				<a href="/actus">Actualités</a>
+			</li>
+			<li>
+				<a href="/concerts">Concerts</a>
+			</li>
+			<li>
+				<a href="/goodies">Goodies</a>
+			</li>
+			<li>
+				<a href="/contact">Contact</a>
+			</li>
+		</ul>
+	</div>
+	<div class="uk-navbar-right uk-hidden@m">
+		<button class="uk-navbar-toggle uk-navbar-toggle-animate" uk-navbar-toggle-icon uk-toggle="target: #offcanvas-flip"></button>
+	</div>
+	<div class="uk-navbar-right uk-visible@m">
+		<a href="/" class="uk-navbar-item uk-logo iconMonCompte"><img src="/assets/images/icons/Icone_monCompte.svg" alt="Mon compte"></a>
+		<ul class="uk-navbar-nav">
+			{% if session.isLogin == false %}
+				<li>
+					<a href="/login">Connexion</a>
+				</li>
+			{% else %}
+				<li>
+					<a href="/Profil">Mon compte</a>
+				</li>
+			{% endif %}
+		</ul>
+
+	</div>
+	<div id="offcanvas-flip" uk-offcanvas="flip:true, overlay: true">
+		<div class="uk-offcanvas-bar">
+			<ul class="uk-nav">
+				<li>
+					<a href="/">Accueil</a>
+				</li>
+				<li>
+					<a href="/groupe">Le groupe</a>
+				</li>
+				<li>
+					<a href="/discographie">Discographie</a>
+				</li>
+				<li>
+					<a href="/actus">Actualités</a>
+				</li>
+				<li>
+					<a href="/concerts">Concerts</a>
+				</li>
+				<li>
+					<a href="/goodies">Goodies</a>
+				</li>
+				<li>
+					<a href="/contact">Contact</a>
+				</li>
+				<li class="uk-nav-divider"></li>
+				<li>
+					<div>
+						<a href="/" class="uk-logo iconMonCompte"><img src="/assets/images/icons/Icone_monCompte.svg" alt="Mon compte"></a>
+						<a href="/login">Mon compte</a>
+					</div>
+				</li>
+			</div>
+		</li>
+	</ul>
+</div></div></nav>
