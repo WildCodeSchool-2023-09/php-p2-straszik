@@ -49,5 +49,4 @@ class GoodiesManager extends AbstractManager
 
         return $statement->execute();
     }
-
 }

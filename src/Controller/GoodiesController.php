@@ -2,37 +2,36 @@
 
 namespace App\Controller;
 
-use App\Controller\AbstractController;
-use App\Model\Component\AsideManager;
 use App\Model\GoodiesManager;
+use App\Controller\AbstractController;
+use App\Controller\Component\NewsletterController;
 
 class GoodiesController extends AbstractController
 {
-
     public function index(): string
     {
 
-      $errors = [];
-      $validateInscription = false;
-      $data = array_map('trim', $_POST);
+        $errors = [];
+        $validateInscription = false;
 
-      $asideManager = new AsideManager();
-      if ($_SERVER['REQUEST_METHOD'] === "POST") {
-          $errors = $this->verifNewsletter($data);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $data = array_map('trim', $_POST);
+            $newsletterController = new NewsletterController();
+            $errors = $newsletterController->verifFormNewsletter($data);
 
-          if (empty($errors)) {
-              $asideManager->insert($data['email']);
-              $validateInscription = true;
-          }
-      }
+            if (empty($errors)) {
+                $validateInscription = $newsletterController->addEmailNewletter($data['email']);
+            }
+        }
 
-      $goodiesManager = new GoodiesManager();
-      $goodies = $goodiesManager->selectAllGoodies();
 
-      return $this->twig->render("Goodies/goodies.html.twig", ["errors" => $errors,
-      "validateInscription" => $validateInscription, "goodies" => $goodies]);
+            $goodiesManager = new GoodiesManager();
+            $goodies = $goodiesManager->selectAllGoodies();
+
+            return $this->twig->render("Goodies/goodies.html.twig", ["errors" => $errors,
+            "validateInscription" => $validateInscription, "goodies" => $goodies]);
     }
-  
+
     public function indexAdmin(): string
     {
         $goodiesManager = new GoodiesManager();
@@ -140,12 +139,12 @@ class GoodiesController extends AbstractController
             $errors["extension"] = "L'extension du fichier ne correspond pas avec l'extension demandé";
         }
 
-        return $errors;
+            return $errors;
     }
 
     public function verifForm(array $data): array
     {
-        $errors = [];
+            $errors = [];
 
         foreach ($data as $key => $champ) {
             if (empty($champ)) {
@@ -155,17 +154,6 @@ class GoodiesController extends AbstractController
             if (intval($champ) <= 0 && $key === "price") {
                 $errors["notPrice"] = "Le prix doit être supérieur à zéro !";
             }
-
-    public function verifNewsletter(array $verif): array
-    {
-        $errors = [];
-
-        if (empty($verif["email"])) {
-            $errors[] = "Veuillez remplir le champ !";
-        }
-
-        if (!filter_var($verif["email"], FILTER_VALIDATE_EMAIL)) {
-            $errors[] = "Le mail n'est pas valide !";
         }
 
         return $errors;
