@@ -1,0 +1,45 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <section class="uk-width-xlarge@s container-registerUser">
+    {{dump(errors)}}
+    {{dump(errorsEmail)}}
+        <h1 class="uk-heading-line uk-text-center disco-heading-line"><span>Créer votre compte</span></h1>
+        <form method="POST">
+            <div class="uk-flex uk-child-width-expand ">
+                <div class="uk-flex uk-flex-column ensemble-registerUser">
+                    <label class="label-registerUser" for="lastname">Nom</label>
+                    <input class="uk-input input-registerUser" name="lastname" id="lastname" type="text">
+                    
+                </div>
+                <div>
+                    <label class="label-registerUser" for="firstname">Prénom</label>
+                    <input class="uk-input input-registerUser" name="firstname" id="firstname" type="text">
+                </div>
+            </div>
+            <div class="layout-registerUser">
+                <label class="label-registerUser" for="email">Email</label>
+                <input class="uk-input input-registerUser" type="text" name="email" id="email">
+            </div>
+            <div class="layout-registerUser">
+                <label class="label-registerUser" for="password">Mot de passe</label>
+                <input class="uk-input input-registerUser" type="password" name="password" id="password">
+            </div>
+            <div class="layout-registerUser">
+                <label class="label-registerUser" for="adresse">Adresse</label>
+                <input class="uk-input input-registerUser" type="text" name="adresse" id="adresse">
+            </div>
+            <div class="layout-registerUser uk-flex uk-child-width-expand ">
+                <div class="ensemble-registerUser">
+                    <label class="label-registerUser" for="code_postal">Code Postal</label>
+                    <input class="uk-input input-registerUser" type="number" name="code_postal" id="code_postal">
+                </div>
+                <div>
+                    <label class="label-registerUser" for="city">Ville</label>
+                    <input class="uk-input input-registerUser" type="text" name="city" id="city">
+                </div>
+            </div>
+            <button class="btn-registerUser uk-button uk-button-default uk-align-center">Créer mon compte</button>
+        </form>
+    </section>
+{% endblock %}

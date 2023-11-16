@@ -1,0 +1,30 @@
+label.label-registerUser {
+    color: var(--secondary);
+    font-size: 1.4rem;
+}
+
+.ensemble-registerUser {
+    margin-right: 1rem;
+}
+
+div.layout-registerUser {
+    margin-top: 1.6rem;
+}
+
+button.btn-registerUser {
+    font-size: 1.3rem;
+    color: var(--background);
+    background-color: var(--cards_background);
+    border-radius: 0.5rem;
+    transition: 0.3s;
+    border: unset;
+}
+
+input.input-registerUser:focus {
+    background-color: var(--cards_background);
+}
+
+button.btn-registerUser:hover {
+    color: var(--secondary);
+    background-color: var(--primary);
+}
