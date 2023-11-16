@@ -17,6 +17,8 @@ return [
     'discographie' => ['DiscographyController', 'index',],
     'actus' => ['ActusController', 'index',],
     'contact' => ['ContactController', 'index',],
+    'concerts' => ['ConcertController', 'index',],
+    'goodies' => ['GoodiesController', 'index'],
     'admin/dashboard' => ['DashboardController', 'index',],
     'admin/actusadmin' => ['ActusController', 'indexAdmin',],
     'admin/ActusAdmin/new' => ['ActusController', 'new',],
@@ -29,4 +31,8 @@ return [
     'admin/DiscoAdmin/editSong' => ['DiscographyController', 'editSong', ['id']],
     'admin/DiscoAdmin/deleteAlbum' => ['DiscographyController', 'deleteAlbum', ['id']],
     'admin/DiscoAdmin/deleteSong' => ['DiscographyController', 'deleteSong', ['id']],
+    'admin/GoodiesAdmin' => ["GoodiesController", 'indexAdmin'],
+    'admin/GoodiesAdmin/edit' => ["GoodiesController", 'edit', ['id']],
+    'admin/GoodiesAdmin/add' => ["GoodiesController", 'add'],
+    'admin/GoodiesAdmin/delete' => ["GoodiesController", 'delete', ['id']],
 ];
