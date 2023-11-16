@@ -22,4 +22,11 @@ return [
     'admin/ActusAdmin/new' => ['ActusController', 'new',],
     'admin/ActusAdmin/edit' => ['ActusController', 'edit', ['id']],
     'admin/ActusAdmin/delete' => ['ActusController', 'delete', ['id']],
+    'admin/DiscoAdmin' => ['DiscographyController', 'indexAdmin',],
+    'admin/DiscoAdmin/newAlbum' => ['DiscographyController', 'newAlbum',],
+    'admin/DiscoAdmin/newSong' => ['DiscographyController', 'newSong',],
+    'admin/DiscoAdmin/editAlbum' => ['DiscographyController', 'editAlbum', ['id']],
+    'admin/DiscoAdmin/editSong' => ['DiscographyController', 'editSong', ['id']],
+    'admin/DiscoAdmin/deleteAlbum' => ['DiscographyController', 'deleteAlbum', ['id']],
+    'admin/DiscoAdmin/deleteSong' => ['DiscographyController', 'deleteSong', ['id']],
 ];
