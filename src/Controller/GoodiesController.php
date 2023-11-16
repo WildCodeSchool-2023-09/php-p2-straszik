@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Controller\AbstractController;
-use App\Model\Component\AsideManager;
 use App\Model\GoodiesManager;
 
 class GoodiesController extends AbstractController
@@ -13,17 +12,6 @@ class GoodiesController extends AbstractController
 
         $errors = [];
         $validateInscription = false;
-        $data = array_map('trim', $_POST);
-
-        $asideManager = new AsideManager();
-        if ($_SERVER['REQUEST_METHOD'] === "POST") {
-            $errors = $this->verifNewsletter($data);
-
-            if (empty($errors)) {
-                $asideManager->insert($data['email']);
-                $validateInscription = true;
-            }
-        }
 
         $goodiesManager = new GoodiesManager();
         $goodies = $goodiesManager->selectAllGoodies();
