@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Controller\Component\NewsletterController;
 use App\Model\ContactManager;
 
 class ContactController extends AbstractController
@@ -11,18 +12,31 @@ class ContactController extends AbstractController
         $contactManager = new ContactManager();
         $errors = [];
         $validateContact = false;
+        $validateNewsletter = false;
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $contacts = array_map('trim', $_POST);
-            $errors = $this->validateContact($contacts);
+            $data = array_map('trim', $_POST);
+            $data = array_map('htmlspecialchars', $data);
+            if (isset($data['contact'])) {
+                $errors = $this->validateContact($data);
 
-            if (empty($errors)) {
-                $contactManager->insert($contacts);
-                $validateContact = true;
+                if (empty($errors)) {
+                    $contactManager->insert($data);
+                    $validateContact = true;
+                }
+            }
+
+            if (isset($data["newsletter"])) {
+                $newsletterController = new NewsletterController();
+                $errors = $newsletterController->verifFormNewsletter($data);
+
+                if (empty($errors)) {
+                    $validateNewsletter = $newsletterController->addEmailNewletter($data['email']);
+                }
             }
         }
         return $this->twig->render('Contact/contact.html.twig', ['errors' => $errors,
-        'validateContact' => $validateContact]);
+        'validateContact' => $validateContact, 'validateNewsletter' => $validateNewsletter]);
     }
 
     public function validateContact(array $contacts): array
