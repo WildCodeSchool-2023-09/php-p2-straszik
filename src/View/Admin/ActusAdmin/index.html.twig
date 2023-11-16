@@ -1,0 +1,48 @@
+{% extends 'admin.html.twig' %}
+
+{% block content %}
+<h2 class="uk-text-lead admin-h2">Gestion des actualités</h2>	
+	<div uk-grid>
+		<div>
+			<div class="uk-card uk-card-default uk-card-body admin-actu-card-body">
+				<h3 class="uk-card-title">Liste des actualités</h3>
+				<a class="uk-button uk-button-primary contact-insc-button admin-ajout-button" 
+				href="/admin/ActusAdmin/new" uk-icon="plus">Ajouter une nouvelle actu&ensp;</a>
+				<table id="ActusTable" class="uk-table uk-table-hover uk-table-divider">
+					<thead>
+						<tr>
+							<th class="admin-th">title</th>
+							<th class="admin-th">description</th>
+							<th class="admin-th">Catégorie</th>
+							<th class="admin-th">image</th>
+						</tr>
+					</thead>
+					<tbody>
+
+						{% for new in news %}
+							<tr>
+								<td>{{ new.title }}</td>
+								<td>{{ new.description }}</td>
+								<td>{{ new.name}}</td>
+								<td><img src="/uploads/{{new.image}}" width="100px" alt="{{ new.title }}"/></td>
+								<td>
+									<a href="/admin/ActusAdmin/edit?id={{ new.id }}" uk-icon="icon: pencil"></a>
+									<a href="/admin/ActusAdmin/delete?id={{ new.id }}" uk-icon="icon: trash"></a>
+								</td>
+							</tr>
+						{% else %}
+							<tr>
+								<td colspan="6">pas données</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block javascript %}
+
+{% endblock %}

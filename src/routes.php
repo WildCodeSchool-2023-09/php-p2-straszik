@@ -17,5 +17,11 @@ return [
     'discographie' => ['DiscographyController', 'index',],
     'actus' => ['ActusController', 'index',],
     'concerts' => ['ConcertController', 'index',],
+    'goodies' => ['GoodiesController', 'index'],
     'contact' => ['ContactController', 'index',],
+    'admin/dashboard' => ['DashboardController', 'index',],
+    'admin/actusadmin' => ['ActusController', 'indexAdmin',],
+    'admin/ActusAdmin/new' => ['ActusController', 'new',],
+    'admin/ActusAdmin/edit' => ['ActusController', 'edit', ['id']],
+    'admin/ActusAdmin/delete' => ['ActusController', 'delete', ['id']],
 ];
