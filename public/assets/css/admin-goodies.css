@@ -1,0 +1,57 @@
+section.admin-goodies {
+    background-color: var(--cards_background);
+}
+
+a.admin-add-goodie, button.admin-add-goodie {
+    color: var(--secondary);
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    border: none;
+    transition: 0.3s;
+}
+
+a.admin-add-goodie:hover {
+    color: var(--primary);
+    background-color: var(--secondary);
+}
+
+button.admin-add-goodie:hover {
+    color: var(--primary);
+    background-color: var(--background);
+}
+
+
+h3.admin-h3-goodie-edit {
+    color: var(--primary)
+}
+
+a.admin-retour-goodies {
+    background-color: var(--background);
+    color: var(--secondary);
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    transition: 0.5s;
+}
+
+a.admin-retour-goodies:hover {
+    background-color: var(--primary);
+    color: var(--background);
+
+}
+
+section.admin-goodies-form {
+    width: 70%;
+}
+
+p.admin-error-goodie{
+    color: var(--primary);
+    margin: 0.5rem 0 0 1rem;
+    font-size: 1.2rem;
+}
+
+ul.admin-error-goodie {
+    list-style: none;
+    color: var(--primary);
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+}

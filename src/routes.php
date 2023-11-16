@@ -22,5 +22,8 @@ return [
     'admin/ActusAdmin/new' => ['ActusController', 'new',],
     'admin/ActusAdmin/edit' => ['ActusController', 'edit', ['id']],
     'admin/ActusAdmin/delete' => ['ActusController', 'delete', ['id']],
-    'admin/goodiesadmin' => ["GoodiesController", 'index'],
+    'admin/GoodiesAdmin' => ["GoodiesController", 'indexAdmin'],
+    'admin/GoodiesAdmin/edit' => ["GoodiesController", 'edit', ['id']],
+    'admin/GoodiesAdmin/add' => ["GoodiesController", 'add'],
+    'admin/GoodiesAdmin/delete' => ["GoodiesController", 'delete', ['id']],
 ];
