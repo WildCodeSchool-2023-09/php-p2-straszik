@@ -14,6 +14,7 @@ class GoodiesController extends AbstractController
         $errors = [];
         $validateInscription = false;
 
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = array_map('trim', $_POST);
             $newsletterController = new NewsletterController();
@@ -23,7 +24,6 @@ class GoodiesController extends AbstractController
                 $validateInscription = $newsletterController->addEmailNewletter($data['email']);
             }
         }
-
 
             $goodiesManager = new GoodiesManager();
             $goodies = $goodiesManager->selectAllGoodies();
