@@ -16,6 +16,7 @@ return [
     'groupe' => ['GroupeController', 'index',],
     'discographie' => ['DiscographyController', 'index',],
     'actus' => ['ActusController', 'index',],
+    'goodies' => ['GoodiesController', 'index'],
     'contact' => ['ContactController', 'index',],
     'admin/dashboard' => ['DashboardController', 'index',],
     'admin/actusadmin' => ['ActusController', 'indexAdmin',],
