@@ -1,0 +1,75 @@
+/*Page Goodies */
+h1.title-goodies {
+    color: var(--secondary)
+}
+
+
+h3.subtitle-goodies {
+    color: var(--primary);
+    padding: 1.5rem;
+    font-size: 2rem;
+}
+
+/* Carte Goodies */
+.card_goodies {
+    height: 23rem;
+    background-color: var(--cards_background);
+    transition-property: background-color;
+    transition: 0.5s;
+    padding-left: 0;
+    border-radius: 5%;
+}
+img.img-card-goodie {
+    border-radius: 5% 5% 0 0; 
+}
+
+.text-card-goodies {
+    font-size: 1.3rem;
+}
+
+.text-hover-goodies {
+    margin-top: 2rem;
+    color: var(--secondary);
+}
+
+.card_goodies:hover {
+    background-color: var(--primary);
+    margin: 1rem;
+    transform: scale(1.2); 
+    
+}
+
+@media screen and (max-width: 960px) {
+    .card_goodies {
+        height: auto;
+        width: fit-content;
+        margin: auto;
+    }
+
+    img.img-card-goodie {
+        border-radius: 5%; 
+    }
+}
+
+
+/* Modal Goodies */
+div.modal-goodie {
+    background-color: var(--cards_background);
+    border-radius: 1rem;
+}
+
+div.modal-goodie.uk-modal-dialog{
+    width: fit-content;
+}
+
+div.modal-goodie * {
+    font-family: var(--font-family);
+}
+
+p.modal-goodie-desc {
+    font-size: 1.2rem;
+}
+
+h3.modal-price-goodie {
+    font-size: 2rem;
+}
