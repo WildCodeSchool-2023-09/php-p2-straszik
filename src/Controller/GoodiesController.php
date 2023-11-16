@@ -19,19 +19,4 @@ class GoodiesController extends AbstractController
         return $this->twig->render("Goodies/goodies.html.twig", ["errors" => $errors,
         "validateInscription" => $validateInscription, "goodies" => $goodies]);
     }
-
-    public function verifNewsletter(array $verif): array
-    {
-        $errors = [];
-
-        if (empty($verif["email"])) {
-            $errors[] = "Veuillez remplir le champ !";
-        }
-
-        if (!filter_var($verif["email"], FILTER_VALIDATE_EMAIL)) {
-            $errors[] = "Le mail n'est pas valide !";
-        }
-
-        return $errors;
-    }
 }
