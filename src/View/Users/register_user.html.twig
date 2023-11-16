@@ -2,41 +2,51 @@
 
 {% block content %}
     <section class="uk-width-xlarge@s container-registerUser">
-    {{dump(errors)}}
-    {{dump(errorsEmail)}}
         <h1 class="uk-heading-line uk-text-center disco-heading-line"><span>Créer votre compte</span></h1>
         <form method="POST">
             <div class="uk-flex uk-child-width-expand ">
                 <div class="uk-flex uk-flex-column ensemble-registerUser">
                     <label class="label-registerUser" for="lastname">Nom</label>
                     <input class="uk-input input-registerUser" name="lastname" id="lastname" type="text">
-                    
+                    {% if errors.firstname %}<p class="errors-registerUser uk-margin-small">{{ errors.firstname }}</p>{% endif %}
                 </div>
                 <div>
                     <label class="label-registerUser" for="firstname">Prénom</label>
                     <input class="uk-input input-registerUser" name="firstname" id="firstname" type="text">
+                    {% if errors.lastname %}<p class="errors-registerUser uk-margin-small">{{ errors.lastname }}</p>{% endif %}
                 </div>
             </div>
             <div class="layout-registerUser">
                 <label class="label-registerUser" for="email">Email</label>
                 <input class="uk-input input-registerUser" type="text" name="email" id="email">
+                {% if ((errors.email is defined) or  (errorsEmail is defined))  %}
+                    <ul class="list-errors-registerUser errors-registerUser">
+                        {% if errors.email %}<li>{{ errors.email }}</li>{% endif %}
+                        {% if errorsEmail.failFormatEmail %}<li>{{ errorsEmail.failFormatEmail }}</li>{% endif %}
+                        {% if errorsEmail.existEmail %}<li>{{ errorsEmail.existEmail }}</li>{% endif %}
+                    </ul>
+                {% endif %}
             </div>
             <div class="layout-registerUser">
                 <label class="label-registerUser" for="password">Mot de passe</label>
                 <input class="uk-input input-registerUser" type="password" name="password" id="password">
+                {% if errors.password %}<p class="errors-registerUser uk-margin-small">{{ errors.password }}</p>{% endif %}
             </div>
             <div class="layout-registerUser">
                 <label class="label-registerUser" for="adresse">Adresse</label>
                 <input class="uk-input input-registerUser" type="text" name="adresse" id="adresse">
+                {% if errors.adresse %}<p class="errors-registerUser uk-margin-small">{{ errors.adresse }}</p>{% endif %}
             </div>
             <div class="layout-registerUser uk-flex uk-child-width-expand ">
                 <div class="ensemble-registerUser">
                     <label class="label-registerUser" for="code_postal">Code Postal</label>
                     <input class="uk-input input-registerUser" type="number" name="code_postal" id="code_postal">
+                    {% if errors.code_postal %}<p class="errors-registerUser uk-margin-small">{{ errors.code_postal }}</p>{% endif %}
                 </div>
                 <div>
                     <label class="label-registerUser" for="city">Ville</label>
                     <input class="uk-input input-registerUser" type="text" name="city" id="city">
+                    {% if errors.city %}<p class="errors-registerUser uk-margin-small">{{ errors.city }}</p>{% endif %}
                 </div>
             </div>
             <button class="btn-registerUser uk-button uk-button-default uk-align-center">Créer mon compte</button>

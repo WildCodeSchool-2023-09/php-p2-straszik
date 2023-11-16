@@ -25,5 +25,6 @@ abstract class AbstractController
             ]
         );
         $this->twig->addExtension(new DebugExtension());
+        $this->twig->addGlobal("isLogin", $_SESSION['isLogin']);
     }
 }

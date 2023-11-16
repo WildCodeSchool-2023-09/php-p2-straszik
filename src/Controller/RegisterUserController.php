@@ -10,12 +10,13 @@ class RegisterUserController extends AbstractController
     {
         $errors = [];
         $errorsEmail = [];
-        $data = [];
 
         if ($_SERVER['REQUEST_METHOD'] === "POST") {
             $data = array_map('trim', $_POST);
             $errors = $this->verifForm($data);
-            $errorsEmail = $this->verifEmail($data['email']);
+            if (empty($errors['email'])) {
+                $errorsEmail = $this->verifEmail($data['email']);
+            }
 
             if (empty($errors) && empty($errorsEmail)) {
                 $registerUserManager = new RegisterUserManager();
@@ -24,10 +25,8 @@ class RegisterUserController extends AbstractController
             }
         }
 
-
-        $isLogin = false;
-        return $this->twig->render("Users/register_user.html.twig", ['isLogin' => $isLogin,
-        "data" => $data, "errors" => $errors, "errorsEmail" => $errorsEmail]);
+        return $this->twig->render("Users/register_user.html.twig", ["errors" => $errors,
+        "errorsEmail" => $errorsEmail]);
     }
 
     public function verifForm(array $data): array
@@ -43,7 +42,7 @@ class RegisterUserController extends AbstractController
         return $errors;
     }
 
-    public function verifEmail(string $email): array|false
+    public function verifEmail(string $email): array
     {
         $errorsEmail = [];
 

@@ -42,7 +42,11 @@
                 <li>
                     <div>
                         <a href="/" class="uk-logo iconMonCompte"><img src="/assets/images/icons/Icone_monCompte.svg" alt="Mon compte"></a>
-                        <a href="/login">Mon compte</a>
+                        {% if isLogin %}
+                            <a href="/profil">Mon compte</a>
+                        {% else %}
+                            <a href="/login">Connexion</a>
+                        {% endif %}
                     </div>
                 </li>
             </ul>

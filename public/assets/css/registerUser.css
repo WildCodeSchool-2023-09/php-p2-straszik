@@ -28,3 +28,14 @@ button.btn-registerUser:hover {
     color: var(--secondary);
     background-color: var(--primary);
 }
+
+.errors-registerUser {
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+ul.list-errors-registerUser {
+    list-style: none;
+    padding: 0;
+}
