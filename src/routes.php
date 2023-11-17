@@ -24,4 +24,5 @@ return [
     'admin/ActusAdmin/new' => ['ActusController', 'new',],
     'admin/ActusAdmin/edit' => ['ActusController', 'edit', ['id']],
     'admin/ActusAdmin/delete' => ['ActusController', 'delete', ['id']],
+    'profil' => ['AccountController', 'edit', [$_SESSION['user_id']]],
 ];
