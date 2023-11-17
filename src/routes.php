@@ -36,4 +36,5 @@ return [
     'admin/GoodiesAdmin/edit' => ["GoodiesController", 'edit', ['id']],
     'admin/GoodiesAdmin/add' => ["GoodiesController", 'add'],
     'admin/GoodiesAdmin/delete' => ["GoodiesController", 'delete', ['id']],
+    'register' => ['RegisterUserController', 'index']
 ];
