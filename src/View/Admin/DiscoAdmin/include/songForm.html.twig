@@ -1,0 +1,30 @@
+<form method="post" enctype="multipart/form-data">
+	<fieldset class="uk-fieldset">
+
+		<legend class="uk-legend admin-legend">Gérer les chansons</legend>
+
+		<div class="uk-margin">
+			<input class="uk-input" type="text" name="title" placeholder="Titre chanson" value="{{ songs.title ? songs.title }}" aria-label="Input">
+			{% if errors.title is defined %}<p class="admin-error-disco">{{ errors.title }}</p>{% endif %}
+		</div>
+
+		<div class="uk-margin">
+			<input class="uk-input" type="text" name="time" placeholder="Durée" value="{{ songs.time ? songs.time }}" aria-label="Input">
+			{% if errors.time is defined %}<p class="admin-error-disco">{{ errors.time }}</p>{% endif %}
+		</div>
+
+        <div class="uk-margin">
+			<label>Sélectionner l'album</label>
+			<select name="album_id" class="uk-select admin-select-categorie">
+			{% for album in albums %}
+				<option selected='{{album_title.id}}' value='{{ album.id }}'>{{ album.title }}</option>
+			{% endfor %}
+			</select>
+        </div>
+		<div class="uk-margin">
+			<button type="submit" class="uk-button uk-button-primary contact-insc-button 
+			admin-ajout-button">{{ newSong }} {{ editSong }}</button>
+		</div>
+	</fieldset>
+</form>
+

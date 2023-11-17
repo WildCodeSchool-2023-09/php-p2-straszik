@@ -1,0 +1,7 @@
+{% extends 'admin.html.twig' %}
+
+{% block content %}
+    <a class="uk-button uk-button-secondary uk-align-right" 
+    href="/admin/DiscoAdmin" style="border-radius:0.5rem">Toutes les chansons et albums</a>
+    {% include 'Admin/DiscoAdmin/include/songForm.html.twig' with {'newSong': "Ajouter une nouvelle chanson"} %}
+{% endblock %}
