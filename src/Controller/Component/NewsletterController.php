@@ -2,10 +2,9 @@
 
 namespace App\Controller\Component;
 
-use App\Controller\AbstractController;
 use App\Model\Component\NewsletterManager;
 
-class NewsletterController extends AbstractController
+class NewsletterController
 {
     public function verifFormNewsletter(array $verif): array
     {
