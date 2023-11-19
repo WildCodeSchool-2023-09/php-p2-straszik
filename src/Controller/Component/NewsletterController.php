@@ -52,13 +52,6 @@ class NewsletterController extends AbstractController
 
             $errors = $this->verifFormNewsletter($data);
 
-            // if(empty($data['email'])) {
-            //     $errors[] = "Le champ est vide !";
-            // }
-            // if(!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-            //     $errors[] = "L'email n'est pas au bon format";
-            // }
-
             if (empty($errors)) {
                 $newsletterManager = new NewsletterManager();
                 $emailUser = $newsletterManager->selectOneByEmail($data['email']);
