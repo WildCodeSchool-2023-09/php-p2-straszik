@@ -1,0 +1,123 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<h1 class="uk-heading-line uk-text-center contact-heading-line" style="margin-bottom:4rem"><span>Mon compte</span></h1>
+    <form class="uk-grid-small uk-grid" method="POST" style="margin-left:4rem">
+        <div class="uk-width-1-2@s" style="margin-bottom:2rem">
+            <label class="uk-form-label contact-form-label"for="form-stacked-text">Prénom</label>
+            <div class="uk-form-controls">
+                <input class="uk-input contact-input" name="firstname"  id="form-stacked-text" type="text" 
+                placeholder="Prénom" value="{{ user.firstname }}" aria-label="Input">
+                 {% if errors.firstname %}<p class="uk-margin-small">{{ errors.firstname }}</p>{% endif %}
+            </div>
+        </div>
+
+        <div class="uk-width-1-2@s" style="margin-bottom:2rem">
+            <label class="uk-form-label contact-form-label"for="form-stacked-text">Mot de passe</label>
+            <div class="uk-form-controls">
+                <input class="uk-input contact-input" name="password"  id="form-stacked-text" type="text" 
+                placeholder="Mot de passe" value="{{ user.password }}" aria-label="Input">
+                 {% if errors.password %}<p class="uk-margin-small">{{ errors.password }}</p>{% endif %}
+            </div>
+        </div>
+
+        <div class="uk-width-1-2@s" style="margin-bottom:2rem">  
+            <label class="uk-form-label contact-form-label"for="form-stacked-text">Nom</label>
+            <div class="uk-form-controls">
+                <input class="uk-input contact-input" name="lastname"  id="form-stacked-text" type="text" placeholder="Nom"
+                value="{{ user.lastname }}" aria-label="Input">
+                {% if errors.lastname %}<p class="uk-margin-small">{{ errors.lastname }}</p>{% endif %}
+            </div>        
+        </div>
+
+        <div class="uk-width-1-2@s" style="margin-bottom:2rem">
+            <label class="uk-form-label contact-form-label"for="form-stacked-text">Email</label>
+            <div class="uk-form-controls">
+                <input class="uk-input contact-input" name="email"  id="form-stacked-text" type="text" placeholder="Email"
+                value="{{ user.email }}" aria-label="Input">
+                {% if ((errors.email is defined) or  (errorsEmail is defined))  %}
+                    {% if errors.email is empty %}
+                        <h4 class="contact-mess-errors">{{errors.email}}</h4>
+                    {% endif %}
+                    {% if errors.validateEmail is not empty %}
+                        <h4 class="contact-mess-errors">{{errors.validateEmail}}</h4>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="uk-width-1-2@s" style="margin-bottom:2rem">
+            <label class="uk-form-label contact-form-label"for="form-stacked-text">Adresse</label>
+            <div class="uk-form-controls">
+                <input class="uk-input contact-input" name="adresse"  id="form-stacked-text" type="text" placeholder="Adresse"
+                value="{{ user.adresse }}" aria-label="Input">
+                {% if errors.adresse %}<p class="uk-margin-small">{{ errors.adresse }}</p>{% endif %}
+            </div>
+        </div>
+
+        <div class="uk-width-1-6@s" style="margin-bottom:2rem">
+            <label class="uk-form-label contact-form-label"for="form-stacked-text">Code postal</label>
+            <div class="uk-form-controls">
+                <input class="uk-input contact-input" name="code_postal"  id="form-stacked-text" type="text" 
+                placeholder="Code postal" value="{{ user.code_postal }}" aria-label="Input">
+                {% if errors.code_postal %}<p class="uk-margin-small">{{ errors.code_postal }}</p>{% endif %}
+            </div>
+        </div> 
+
+            <div class="uk-width-1-4@s" style="margin-bottom:2rem">
+                <label class="uk-form-label contact-form-label"for="form-stacked-text">Ville</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input contact-input" name="ville"  id="form-stacked-text" type="text" 
+                    placeholder="Ville" value="{{ user.ville }}" aria-label="Input">
+                </div>
+                {% if errors.type is not empty %}
+                <h4 class="contact-mess-errors">{{errors.type}}</h4>
+                {% endif %}
+            </div>
+    
+        <div class="uk-width-1-2@s" style="margin-top:2rem">
+            <button class="uk-button uk-button-default contact-button" type="submit" name="updateUser" style="color:var(--secondary)">Enregistrer les modifications</button>
+            <button class="uk-button uk-button-default contact-button" type="submit" style="margin-left:2rem" name="deleteUser">Supprimer mon compte</button>
+        </div>
+    </form>
+
+        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin insc-newsletter" style="margin-left:4rem" uk-grid>
+        <div class="uk-card-media-left uk-cover-container contact-card-media-left" style="margin-top:4rem">
+            <img src="/./assets/images/cigognelesassoifés.jpg" alt="cigogne" uk-cover>
+            <canvas width="600" height="400" class="contact-img"></canvas>
+        </div>
+        <div>
+            <div class="uk-card-body contact-card-body" style="margin-top:4rem">
+                <h2 class="uk-card-title titreInscpContact">Inscription à la newsletter</h2>
+                <p class="uk-text-default contact-newsletter-text">Recevez nos dernières dates de concert et actualités en priorité en vous inscrivant à la newsletter</p>
+                <div class="uk-margin contact-margin">
+                <form method="POST">
+                    <div class="uk-inline contact-inline">
+                        <span class="uk-form-icon contact-icon-mail" uk-icon="icon: mail"></span>
+                        <input class="uk-input contact-input" type="text" name="email" aria-label="Not clickable icon">
+                        <h4 class="contact-mess-errors">{{errors.message}}</h4>
+                    </div>
+                    <button class="uk-button uk-button-default contact-insc-button" name="newsletter">Inscription</button>
+                    
+                    </div>
+                    <div>
+                        <ul>
+                            {% if validateNewsletter %} <li>Inscription Validé !</li>{% endif %}
+                            {% for error in errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div>
+                        <label class="contact-checkbox"><input class="uk-checkbox" type="checkbox" name="check_newsletter" checked>Vous acceptez de recevoir nos derniers articles et dates de concert par mail</label>
+                        <p class="contact-rgpd">Vous affirmez avoir pris connaissance de notre Politique de condifentialité.
+                        </br>Vous pouvez vous désinscrire à tout moment à l'aide des liens de désinscription
+                        ou en nous contactant à l'adresse contact@assoifés.alsace</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div>
+    </div>
+{% endblock %}
