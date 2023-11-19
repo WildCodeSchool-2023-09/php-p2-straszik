@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Model\UserManager;
 use Twig\Environment;
 use Twig\Extension\DebugExtension;
 use Twig\Loader\FilesystemLoader;
@@ -12,6 +13,7 @@ use Twig\Loader\FilesystemLoader;
 abstract class AbstractController
 {
     protected Environment $twig;
+    protected bool $admin;
 
 
     public function __construct()
@@ -25,6 +27,15 @@ abstract class AbstractController
             ]
         );
         $this->twig->addExtension(new DebugExtension());
+        $userManager = new UserManager();
+        if (isset($_SESSION['user_id'])) {
+            $user = $userManager->selectOneById($_SESSION['user_id']);
+            $this->admin = $user["status"] ? true : false;
+        } else {
+            $this->admin = false;
+        }
+
         $this->twig->addGlobal("session", $_SESSION);
+        $this->twig->addGlobal("admin", $this->admin);
     }
 }

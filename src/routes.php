@@ -36,6 +36,9 @@ return [
     'admin/GoodiesAdmin/edit' => ["GoodiesController", 'edit', ['id']],
     'admin/GoodiesAdmin/add' => ["GoodiesController", 'add'],
     'admin/GoodiesAdmin/delete' => ["GoodiesController", 'delete', ['id']],
+    'admin/MessagesAdmin' => ["AdminMessagesController" , "index"],
+    'admin/MessagesAdmin/delete' => ["AdminMessagesController" , "delete", ['id']],
     'register' => ['RegisterUserController', 'index'],
     'unscribeNewsletter' => ['Component\NewsletterController' , 'unscribeNewsletter'],
+    'logout' => ['UserController', 'logout']
 ];
