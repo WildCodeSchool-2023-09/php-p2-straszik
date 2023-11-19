@@ -1,0 +1,70 @@
+<form class="uk-grid-small uk-grid admin-users" method="POST" enctype="multipart/form-data">
+        <div class="uk-width-1-2@s" style="margin-bottom:2rem">
+            <label class="uk-form-label"for="form-stacked-text">Prénom</label>
+            <div class="uk-form-controls">
+                <input class="uk-input" name="firstname"  id="form-stacked-text" type="text" 
+                placeholder="Prénom" value="{{ users.firstname }}" aria-label="Input">
+            </div>
+        </div>
+
+        <div class="uk-width-1-2@s" style="margin-bottom:2rem">
+            <label class="uk-form-label"for="form-stacked-text">Mot de passe</label>
+            <div class="uk-form-controls">
+                <input class="uk-input" name="password"  id="form-stacked-text" type="text" 
+                placeholder="Mot de passe" value="{{ users.password }}" aria-label="Input">
+            </div>
+        </div>
+
+        <div class="uk-width-1-2@s" style="margin-bottom:2rem">  
+            <label class="uk-form-label"for="form-stacked-text">Nom</label>
+            <div class="uk-form-controls">
+                <input class="uk-input" name="lastname"  id="form-stacked-text" type="text" placeholder="Nom"
+                value="{{ users.lastname }}" aria-label="Input">
+            </div>        
+        </div>
+
+        <div class="uk-width-1-2@s" style="margin-bottom:2rem">
+            <label class="uk-form-label"for="form-stacked-text">Email</label>
+            <div class="uk-form-controls">
+                <input class="uk-input" name="email"  id="form-stacked-text" type="text" placeholder="Email"
+                value="{{ users.email }}" aria-label="Input">
+            </div>
+        </div>
+
+        <div class="uk-width-1-2@s" style="margin-bottom:2rem">
+            <label class="uk-form-label"for="form-stacked-text">Adresse</label>
+            <div class="uk-form-controls">
+                <input class="uk-input" name="adresse"  id="form-stacked-text" type="text" placeholder="Adresse"
+                value="{{ users.adresse }}" aria-label="Input">
+            </div>
+        </div>
+
+        <div class="uk-width-1-6@s" style="margin-bottom:2rem">
+            <label class="uk-form-label"for="form-stacked-text">Code postal</label>
+            <div class="uk-form-controls">
+                <input class="uk-input" name="code_postal"  id="form-stacked-text" type="text" 
+                placeholder="Code postal" value="{{ users.code_postal }}" aria-label="Input">
+            </div>
+        </div> 
+
+            <div class="uk-width-1-4@s" style="margin-bottom:2rem">
+                <label class="uk-form-label"for="form-stacked-text">Ville</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" name="ville"  id="form-stacked-text" type="text" 
+                    placeholder="Ville" value="{{ users.ville }}" aria-label="Input">
+                </div>
+            </div>
+        
+        <div class="uk-width-1-4@s" style="margin-bottom:2rem">
+            <label class="uk-form-label"for="form-stacked-text">Status</label>
+            <div class="uk-form-controls">
+                <input class="uk-input" style="width:3rem" name="status"  id="form-stacked-text" type="text" 
+                placeholder="status" value="{{ users.status }}" aria-label="Input">
+            </div>
+        </div>
+            
+        <div style="margin-top:2rem">
+            <button class="uk-button uk-button-default contact-button" type="submit" name="update">Enregistrer les modifications</button>
+            <button class="uk-button uk-button-default contact-button" type="submit" name="delete" style="margin-left:0.5rem">Supprimer le compte</button>
+        </div>
+    </form>
