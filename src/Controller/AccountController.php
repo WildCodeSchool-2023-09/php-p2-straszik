@@ -20,11 +20,15 @@ class AccountController extends AbstractController
         return $this->twig->render('Users/Account/userAdmin.html.twig', ['users' => $users]);
     }
 
-    public function edit(int $id)
+    public function edit()
     {
+        // if(!$this->admin) {
+
+        // }
         $errors = [];
         $errorsEmail = [];
         $accountManager = new AccountManager();
+        $idUser = $_SESSION["user_id"];
 
         if ($_SERVER['REQUEST_METHOD'] === "POST") {
             if (isset($_POST['updateUser'])) {
@@ -32,22 +36,22 @@ class AccountController extends AbstractController
                 $errors = $this->verifForm($data);
 
                 if (empty($errors['email'])) {
-                    $errorsEmail = $this->verifEmail($data['email'], $id);
+                    $errorsEmail = $this->verifEmail($data['email'], $idUser);
                 }
 
                 if (empty($errors) && empty($errorsEmail)) {
                     $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
-                    $data['id'] = $id;
+                    $data['id'] = $idUser;
                     $accountManager->update($data);
                     header('Location: /profil');
                 }
             }
             if (isset($_POST['deleteUser'])) {
-                $accountManager->delete((int)$id);
+                $accountManager->delete((int)$idUser);
                 header('Location: /login');
             }
         }
-        $users = $accountManager->selectOneById($id);
+        $users = $accountManager->selectOneById($idUser);
         return $this->twig->render('Users/Account/index.html.twig', ["errors" => $errors,
         "errorsEmail" => $errorsEmail, 'user' => $users]);
     }

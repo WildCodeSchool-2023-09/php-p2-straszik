@@ -25,7 +25,7 @@ return [
     'admin/ActusAdmin/new' => ['ActusController', 'new',],
     'admin/ActusAdmin/edit' => ['ActusController', 'edit', ['id']],
     'admin/ActusAdmin/delete' => ['ActusController', 'delete', ['id']],
-    'profil' => ['AccountController', 'edit', [$_SESSION['user_id']]],
+    'profil' => ['AccountController', 'edit'],
     'admin/DiscoAdmin' => ['DiscographyController', 'indexAdmin',],
     'admin/DiscoAdmin/newAlbum' => ['DiscographyController', 'newAlbum',],
     'admin/DiscoAdmin/newSong' => ['DiscographyController', 'newSong',],
