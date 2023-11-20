@@ -1,0 +1,43 @@
+section.admin-users {
+    background-color: var(--cards_background);
+}
+
+a.admin-edit-users, button.admin-edit-users {
+    color: var(--secondary);
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    border: none;
+    transition: 0.3s;
+}
+
+a.admin-edit-users:hover {
+    color: var(--primary);
+    background-color: var(--secondary);
+}
+
+button.admin-edit-users:hover {
+    color: var(--primary);
+    background-color: var(--background);
+}
+
+h3.admin-h3-users-edit {
+    color: var(--primary)
+}
+
+a.admin-retour-users {
+    background-color: var(--background);
+    color: var(--secondary);
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    transition: 0.5s;
+}
+
+a.admin-retour-users:hover {
+    background-color: var(--primary);
+    color: var(--background);
+
+}
+
+section.admin-users-form {
+    width: 70%;
+}

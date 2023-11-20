@@ -40,4 +40,7 @@ return [
     'admin/GoodiesAdmin/delete' => ["GoodiesController", 'delete', ['id']],
     'register' => ['RegisterUserController', 'index'],
     'unscribeNewsletter' => ['Component\NewsletterController' , 'unscribeNewsletter'],
+    'admin/UsersAdmin' => ["UsersAdminController", 'indexAdmin'],
+    'admin/UsersAdmin/edit' => ["UsersAdminController", 'edit', ['id']],
+    'admin/UsersAdmin/delete' => ["UsersAdminController", 'delete', ['id']],
 ];

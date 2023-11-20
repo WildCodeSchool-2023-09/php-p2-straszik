@@ -1,0 +1,12 @@
+{% extends 'admin.html.twig' %}
+
+{% block content %}
+    <div class="uk-flex">
+        <h3 class="admin-h3-users-edit uk-text-lead uk-flex-auto">Modifier un utilisateur</h3>
+        <a class="admin-retour-users uk-button uk-button-secondary uk-align-right" href="/admin/UsersAdmin">Tous les utilisateurs</a>
+    </div>
+    <section class="admin-users-form">
+    {% include 'Admin/UsersAdmin/Includes/_form_users_admin.html.twig' with {'edit': "Modifer l'utilisateur"} %}
+    </section>
+
+{% endblock %}
