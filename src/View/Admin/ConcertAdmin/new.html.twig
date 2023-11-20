@@ -6,7 +6,5 @@
 		<a class="admin-retour-goodies uk-button uk-button-default uk-width-1-6 uk-align-right" href="/admin/ConcertAdmin">Tous les concerts</a>
 	</div>
 
-	{{ dump(errors) }}
-	{{ dump(errorsFiles) }}
 	{% include 'Admin/ConcertAdmin/_form.html.twig' with {'add':"ajouter un nouveau concert"} %}
 {% endblock %}
