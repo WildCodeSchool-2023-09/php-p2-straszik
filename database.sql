@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `straszik` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `straszik`;
+CREATE DATABASE  IF NOT EXISTS `php_p2_straszik` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `php_p2_straszik`;
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: straszik
@@ -42,7 +42,7 @@ CREATE TABLE `actuality` (
 
 LOCK TABLES `actuality` WRITE;
 /*!40000 ALTER TABLE `actuality` DISABLE KEYS */;
-INSERT INTO `actuality` VALUES (1,'Davele a Geispolsheim','davele_geispolsheim.jpg','Davele vous attends de pied ferme à l\'espace Malraux à Geispolsheim ! Venez consommer et profitez des nombreux goodies en vente directement sur notre stand.',2),(2,'Des concerts tout frais tout chaud !','herbscht_tour.jpg','Dans le 67 à Espace Malraux à Geispolsheim, dans le 68 à Microbrasserie Artisanale G\'sundgo à Eschentzwiller et en Allemagne au Rockcafe Altdorf à Altdorf. #lesassoiffés #microbrasserie #geispolsheim #altdorf #Eschentzwiller #espacemalraux #rockcafe',1),(3,'Retour sur le Sùmmer Tour','herbscht_tour.jpg','Le Sùmmer Tour c\'est déjà terminé ! On aimerait chaleureusement remercier tous ceux qui ont fait le déplacement pour venir nous écouter ! Nous espérons que vous avez pris autant de plaisir que nous ! Mention spéciale aux plus irréductibles qui nous soutiennent à chaque prestation. On vous aime et rdv très bientôt sans doute. Deguà Schmutz ! #lesassoiffés #concert #ete #alsacien #rock',1),(7,'Test','lesAssoifés_groupe.webp','test',2);
+INSERT INTO `actuality` VALUES (1,'Davele a Geispolsheim','davele_geispolsheim.jpg','Davele vous attends de pied ferme à l\'espace Malraux à Geispolsheim ! Venez consommer et profitez des nombreux goodies en vente directement sur notre stand.',2),(2,'Des concerts tout frais tout chaud !','herbscht_tour.jpg','Dans le 67 à Espace Malraux à Geispolsheim, dans le 68 à Microbrasserie Artisanale G\'sundgo à Eschentzwiller et en Allemagne au Rockcafe Altdorf à Altdorf. #lesassoiffés #microbrasserie #geispolsheim #altdorf #Eschentzwiller #espacemalraux #rockcafe',1),(3,'Retour sur le Sùmmer Tour','herbscht_tour.jpg','Le Sùmmer Tour c\'est déjà terminé ! On aimerait chaleureusement remercier tous ceux qui ont fait le déplacement pour venir nous écouter ! Nous espérons que vous avez pris autant de plaisir que nous ! Mention spéciale aux plus irréductibles qui nous soutiennent à chaque prestation. On vous aime et rdv très bientôt sans doute. Deguà Schmutz ! #lesassoiffés #concert #ete #alsacien #rock',1);
 /*!40000 ALTER TABLE `actuality` ENABLE KEYS */;
 UNLOCK TABLES;
 
