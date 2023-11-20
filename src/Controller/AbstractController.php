@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Model\UserManager;
 use Twig\Environment;
-use App\Model\UserManager;
 use Twig\Loader\FilesystemLoader;
 use Twig\Extension\DebugExtension;
 
