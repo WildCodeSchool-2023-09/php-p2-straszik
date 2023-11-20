@@ -8,8 +8,12 @@
 @import url("discography.css");
 @import url("actus.css");
 @import url("goodies.css");
-@import url("contact.css");
 @import url("_aside.css");
+@import url("concert.css");
+@import url("contact.css");
 @import url("_home.css");
-@import url("_groupe.css")
+@import url("_groupe.css");
+@import url("registerUser.css");
+@import url("_forgotPassword.css");
+@import url("admin-goodies.css");
 

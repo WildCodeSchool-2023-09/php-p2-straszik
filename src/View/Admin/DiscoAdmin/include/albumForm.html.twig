@@ -1,0 +1,38 @@
+<form method="post" enctype="multipart/form-data">
+	<fieldset class="uk-fieldset">
+
+		<legend class="uk-legend admin-legend">Gérer les albums</legend>
+
+		<div class="uk-margin">
+			<input class="uk-input" type="text" name="title" placeholder="Titre album" value="{{ albums.title ? albums.title }}" aria-label="Input">
+			{% if errors.title is defined %}<p class="admin-error-disco">{{ errors.title }}</p>{% endif %}
+		</div>
+
+		<div class="uk-margin">
+			<input class="uk-input" type="text" name="year" placeholder="Année" value="{{ albums.year ? albums.year }}" aria-label="Input">
+			{% if errors.year is defined %}<p class="admin-error-disco">{{ errors.year }}</p>{% endif %}
+		</div>
+
+        <div class="uk-margin">
+        <div uk-form-custom>
+            <input type="file" aria-label="Custom controls" name="image" id="image" 
+				accept="image/jpeg, image/jpg, image/png, image/webp">
+            <button class="uk-button uk-button-default" type="button" tabindex="-1">Télécharger une image<span class="uk-margin-small-left" uk-icon="icon: download"></span></button>
+        </div>
+        {% if errorsFile is not empty %}
+            <div>
+                <ul  class="admin-error-disco">
+                    {% for errorFile in errorsFile %}
+                        <li>{{ errorFile }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    	</div>
+
+		<div class="uk-margin">
+			<button type="submit" class="uk-button uk-button-primary contact-insc-button 
+			admin-ajout-button">{{ newAlbum }} {{ editAlbum }}</button>
+		</div>
+	</fieldset>
+</form>

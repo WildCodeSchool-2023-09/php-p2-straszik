@@ -1,0 +1,41 @@
+{% extends 'admin.html.twig' %}
+
+{% block content %}
+
+    <h2 class="uk-text-lead admin-h2">Gestion des goodies</h2>
+    
+    <section class="admin-goodies">
+        <div class="uk-padding uk-padding-remove-bottom">
+            <h3 class="">Liste des goodies</h3>
+            <a class="admin-add-goodie uk-button uk-button-default" href="/admin/GoodiesAdmin/add" >Ajouter un nouveau goodie  <span class="uk-margin-small-left" uk-icon="plus"></span></a>
+        </div>
+        <div class="uk-padding">
+            <table class="uk-table uk-table-hover uk-table-divider" >
+                <thead>
+                    <tr>
+                        <th class="admin-th">Designation</th>
+                        <th class="admin-th">Description</th>
+                        <th class="admin-th">Prix</th>
+                        <th class="admin-th">Image</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for goodie in goodies %}
+
+                        <tr>
+                            <td>{{ goodie.designation }}</td>
+                            <td>{{ goodie.description}}</td>
+                            <td class="uk-text-center">{{ goodie.price }} €</td>
+                            <td><img src="/assets/images/goodies/{{ goodie.picture }}" width="100px" alt=""/></td>
+                            <td>
+                                <a href="/admin/GoodiesAdmin/edit?id={{goodie.id}}" uk-icon="icon: pencil"></a>
+                                <a href="/admin/GoodiesAdmin/delete?id={{goodie.id}}" uk-icon="icon: trash"></a>
+                            <td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+{% endblock %}
