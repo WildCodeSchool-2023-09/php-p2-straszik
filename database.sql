@@ -120,7 +120,7 @@ CREATE TABLE `concert` (
 
 LOCK TABLES `concert` WRITE;
 /*!40000 ALTER TABLE `concert` DISABLE KEYS */;
-INSERT INTO `concert` VALUES (1,'Reims l\'ARENA',100,0,'2023-12-05','Test.png');
+INSERT INTO `concert` VALUES (1,'Reims l\'ARENA',100,0,'2023-12-05','Test.png'), (2,'Bordeaux l\'Auditorium',300,0,'2025-05-12','Test.png'), (3,'Los Angeles l\'Avalon',300,0,'2025-05-12','Test.png');
 /*!40000 ALTER TABLE `concert` ENABLE KEYS */;
 UNLOCK TABLES;
 
