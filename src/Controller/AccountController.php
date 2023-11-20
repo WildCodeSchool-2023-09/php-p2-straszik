@@ -22,9 +22,8 @@ class AccountController extends AbstractController
 
     public function edit()
     {
-        if (!$this->admin) {
+        if (!isset($_SESSION['user_id'])) {
             header('HTTP/1.1 401 Unauthorized');
-            echo "Va te faire niquer";
             return $this->twig->render(
                 'unauthorized_access.html.twig'
             );
