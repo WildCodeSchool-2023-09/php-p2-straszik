@@ -7,11 +7,13 @@
             </div>
         </div>
 
-        <div class="uk-width-1-2@s" style="margin-bottom:2rem">
-            <label class="uk-form-label"for="form-stacked-text">Mot de passe</label>
-            <div class="uk-form-controls">
-                <input class="uk-input" name="password"  id="form-stacked-text" type="text" 
-                placeholder="Mot de passe" value="{{ users.password }}" aria-label="Input">
+        <div class="uk-width-1-4@s">
+			<label class="uk-form-label">Status</label>
+            <div>
+                <select name="status" class="uk-select admin-select-categorie">
+                    <option {% if users.status == 0 %} selected {% endif %} value="0">Utilisateur</option>
+                    <option {% if users.status == 1 %} selected {% endif %} value="1">Admin</option>
+                </select>
             </div>
         </div>
 
@@ -47,24 +49,16 @@
             </div>
         </div> 
 
-            <div class="uk-width-1-4@s" style="margin-bottom:2rem">
-                <label class="uk-form-label"for="form-stacked-text">Ville</label>
-                <div class="uk-form-controls">
-                    <input class="uk-input" name="ville"  id="form-stacked-text" type="text" 
-                    placeholder="Ville" value="{{ users.ville }}" aria-label="Input">
-                </div>
-            </div>
-        
         <div class="uk-width-1-4@s" style="margin-bottom:2rem">
-            <label class="uk-form-label"for="form-stacked-text">Status</label>
+            <label class="uk-form-label"for="form-stacked-text">Ville</label>
             <div class="uk-form-controls">
-                <input class="uk-input" style="width:3rem" name="status"  id="form-stacked-text" type="text" 
-                placeholder="status" value="{{ users.status }}" aria-label="Input">
+                <input class="uk-input" name="ville"  id="form-stacked-text" type="text" 
+                placeholder="Ville" value="{{ users.ville }}" aria-label="Input">
             </div>
         </div>
-            
+
         <div style="margin-top:2rem">
-            <button class="uk-button uk-button-default contact-button" type="submit" name="update">Enregistrer les modifications</button>
+            <button class="uk-button uk-button-default contact-button" type="submit" name="update" style="margin-left:0.5rem">Enregistrer les modifications</button>
             <button class="uk-button uk-button-default contact-button" type="submit" name="delete" style="margin-left:0.5rem">Supprimer le compte</button>
         </div>
     </form>

@@ -20,7 +20,6 @@ class UsersAdminController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (isset($_POST['update'])) {
                 $data = array_map('trim', $_POST);
-                $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
                 $data['id'] = $id;
                 $usersadminManager->update($data);
                 header('Location: /admin/UsersAdmin');

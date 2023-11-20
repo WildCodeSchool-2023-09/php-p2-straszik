@@ -15,12 +15,10 @@
                         <th class="admin-th">Prénom</th>
                         <th class="admin-th">Nom</th>
                         <th class="admin-th">Email</th>
-                        <th class="admin-th">Mot de passe</th>
                         <th class="admin-th">Status</th>
                         <th class="admin-th">Adresse</th>
-                        <th class="admin-th">CP</th>
+                        <th class="admin-th">Code postal</th>
                         <th class="admin-th">Ville</th>
-                        <th class="admin-th">Abonné newsletter</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,12 +28,14 @@
                             <td>{{ user.firstname }}</td>
                             <td>{{ user.lastname}}</td>
                             <td>{{ user.email}}</td>
-                            <td>{{ user.password}}</td>
-                            <td>{{ user.status}}</td>
+                            {% if user.status == 0 %}
+                                <td>Utilisateur</td>
+                            {% elseif user.status == 1 %}
+                                <td>Admin</td>
+                            {% endif %}
                             <td>{{ user.adresse}}</td>
                             <td>{{ user.code_postal}}</td>
                             <td>{{ user.ville}}</td>
-                            <td>{{ user.is_newsletter}}</td>
                             <td>
                                 <a href="/admin/UsersAdmin/edit?id={{user.id}}" uk-icon="icon: pencil"></a>
                                 <a href="/admin/UsersAdmin/delete?id={{user.id}}" uk-icon="icon: trash"></a>
