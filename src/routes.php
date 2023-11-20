@@ -18,7 +18,7 @@ return [
     'actus' => ['ActusController', 'index',],
     'forgotPassword' => ['ForgotPasswordController', 'index',],
     'contact' => ['ContactController', 'index',],
-    'concerts' => ['ConcertController', 'index',],
+    'concert' => ['ConcertController', 'index',],
     'goodies' => ['GoodiesController', 'index'],
     'admin/dashboard' => ['DashboardController', 'index',],
     'admin/actusadmin' => ['ActusController', 'indexAdmin',],
@@ -26,7 +26,11 @@ return [
     'admin/ActusAdmin/edit' => ['ActusController', 'edit', ['id']],
     'admin/ActusAdmin/delete' => ['ActusController', 'delete', ['id']],
     'admin/ConcertAdmin' => ['ConcertController', 'indexAdmin',],
-    'profil' => ['AccountController', 'edit', [$_SESSION['user_id']]],
+    /*
+    'admin/ConcertAdmin/edit' =>['ConcertController', 'edit', ['id']],
+    'admin/ConcertAdmin/delete' =>['ConcertController', 'delete', ['id']],
+    */
+    'profil' => ['AccountController', 'edit',],
     'admin/DiscoAdmin' => ['DiscographyController', 'indexAdmin',],
     'admin/DiscoAdmin/newAlbum' => ['DiscographyController', 'newAlbum',],
     'admin/DiscoAdmin/newSong' => ['DiscographyController', 'newSong',],

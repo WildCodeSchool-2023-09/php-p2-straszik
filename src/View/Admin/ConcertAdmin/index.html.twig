@@ -19,10 +19,11 @@
 					<tbody>
 						{% for concert in concerts %}
 							<tr>
-								<td>{{ new.location }}</td>
-								<td>{{ new.capacity }}</td>
-								<td>{{ new.places_availables}}</td>
-								<td>{{ new.date }}</td>
+								<td>{{ concert.location }}</td>
+								<td>{{ concert.capacity }}</td>
+								<td>{{ concert.places_availables}}</td>
+								<td>{{ concert.date }}</td>
+
 								<td>
 									<a href="/admin/ConcertAdmin/edit?id={{ new.id }}" uk-icon="icon: pencil"></a>
 									<a href="/admin/ConcertAdmin/delete?id={{ new.id }}" uk-icon="icon: trash"></a>

@@ -7,7 +7,7 @@ class ConcertManager extends AbstractManager
     public const TABLE = 'concert';
     public function selectAllConcert(): array
     {
-        $query = 'SELECT * FROM concert ORDER BY id DESC';
+        $query = 'SELECT * FROM ' . self::TABLE . ' ORDER BY id DESC';
           return $this->pdo->query($query)->fetchAll();
     }
 
@@ -33,7 +33,7 @@ class ConcertManager extends AbstractManager
         $statement->bindValue('id', $concert['id'], \PDO::PARAM_INT);
         $statement->bindValue('title', $concert['location'], \PDO::PARAM_STR);
         $statement->bindValue('description', $concert['capacity'], \PDO::PARAM_INT);
-        $statement->bindValue('image', $concert['places_availabes'], \PDO::PARAM_INT);
+        $statement->bindValue('image', $concert['places_availables'], \PDO::PARAM_INT);
         $statement->bindValue('category_id', $concert['date'], \PDO::PARAM_INT);
 
         return $statement->execute();
