@@ -20,36 +20,44 @@ class AccountController extends AbstractController
         return $this->twig->render('Users/Account/userAdmin.html.twig', ['users' => $users]);
     }
 
-    public function edit(int $id)
+    public function edit()
     {
-        $errors = [];
-        $errorsEmail = [];
-        $accountManager = new AccountManager();
+        if (!isset($_SESSION['user_id'])) {
+            header('HTTP/1.1 401 Unauthorized');
+            return $this->twig->render(
+                'unauthorized_access.html.twig'
+            );
+        } else {
+            $errors = [];
+            $errorsEmail = [];
+            $accountManager = new AccountManager();
+            $idUser = $_SESSION["user_id"];
 
-        if ($_SERVER['REQUEST_METHOD'] === "POST") {
-            if (isset($_POST['updateUser'])) {
-                $data = array_map('trim', $_POST);
-                $errors = $this->verifForm($data);
+            if ($_SERVER['REQUEST_METHOD'] === "POST") {
+                if (isset($_POST['updateUser'])) {
+                    $data = array_map('trim', $_POST);
+                    $errors = $this->verifForm($data);
 
-                if (empty($errors['email'])) {
-                    $errorsEmail = $this->verifEmail($data['email'], $id);
+                    if (empty($errors['email'])) {
+                        $errorsEmail = $this->verifEmail($data['email'], $idUser);
+                    }
+
+                    if (empty($errors) && empty($errorsEmail)) {
+                        $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+                        $data['id'] = $idUser;
+                        $accountManager->update($data);
+                        header('Location: /profil');
+                    }
                 }
-
-                if (empty($errors) && empty($errorsEmail)) {
-                    $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
-                    $data['id'] = $id;
-                    $accountManager->update($data);
-                    header('Location: /profil');
+                if (isset($_POST['deleteUser'])) {
+                    $accountManager->delete((int)$idUser);
+                    header('Location: /login');
                 }
             }
-            if (isset($_POST['deleteUser'])) {
-                $accountManager->delete((int)$id);
-                header('Location: /login');
-            }
+            $users = $accountManager->selectOneById($idUser);
+            return $this->twig->render('Users/Account/index.html.twig', ["errors" => $errors,
+            "errorsEmail" => $errorsEmail, 'user' => $users]);
         }
-        $users = $accountManager->selectOneById($id);
-        return $this->twig->render('Users/Account/index.html.twig', ["errors" => $errors,
-        "errorsEmail" => $errorsEmail, 'user' => $users]);
     }
 
     public function verifForm(array $data): array

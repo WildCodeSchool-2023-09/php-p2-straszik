@@ -2,10 +2,9 @@
 
 namespace App\Controller\Component;
 
-use App\Controller\AbstractController;
 use App\Model\Component\NewsletterManager;
 
-class NewsletterController extends AbstractController
+class NewsletterController
 {
     public function verifFormNewsletter(array $verif): array
     {
@@ -51,13 +50,6 @@ class NewsletterController extends AbstractController
             $data = array_map('trim', $_POST);
 
             $errors = $this->verifFormNewsletter($data);
-
-            // if(empty($data['email'])) {
-            //     $errors[] = "Le champ est vide !";
-            // }
-            // if(!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-            //     $errors[] = "L'email n'est pas au bon format";
-            // }
 
             if (empty($errors)) {
                 $newsletterManager = new NewsletterManager();
