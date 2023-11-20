@@ -16,6 +16,7 @@ return [
     'groupe' => ['GroupeController', 'index',],
     'discographie' => ['DiscographyController', 'index',],
     'actus' => ['ActusController', 'index',],
+    'login' => ['UserController', 'login',],
     'forgotPassword' => ['ForgotPasswordController', 'index',],
     'contact' => ['ContactController', 'index',],
     'concerts' => ['ConcertController', 'index',],
@@ -42,4 +43,7 @@ return [
     'register' => ['RegisterUserController', 'index'],
     'unscribeNewsletter' => ['Component\NewsletterController' , 'unscribeNewsletter'],
     'logout' => ['UserController', 'logout']
+    'admin/UsersAdmin' => ["UsersAdminController", 'indexAdmin'],
+    'admin/UsersAdmin/edit' => ["UsersAdminController", 'edit', ['id']],
+    'admin/UsersAdmin/delete' => ["UsersAdminController", 'delete', ['id']],
 ];
