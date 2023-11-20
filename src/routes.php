@@ -26,7 +26,7 @@ return [
     'admin/ActusAdmin/new' => ['ActusController', 'new',],
     'admin/ActusAdmin/edit' => ['ActusController', 'edit', ['id']],
     'admin/ActusAdmin/delete' => ['ActusController', 'delete', ['id']],
-    'profil' => ['AccountController', 'edit', [$_SESSION['user_id']]],
+    'profil' => ['AccountController', 'edit'],
     'admin/DiscoAdmin' => ['DiscographyController', 'indexAdmin',],
     'admin/DiscoAdmin/newAlbum' => ['DiscographyController', 'newAlbum',],
     'admin/DiscoAdmin/newSong' => ['DiscographyController', 'newSong',],
@@ -42,7 +42,7 @@ return [
     'admin/MessagesAdmin/delete' => ["AdminMessagesController" , "delete", ['id']],
     'register' => ['RegisterUserController', 'index'],
     'unscribeNewsletter' => ['Component\NewsletterController' , 'unscribeNewsletter'],
-    'logout' => ['UserController', 'logout']
+    'logout' => ['UserController', 'logout'],
     'admin/UsersAdmin' => ["UsersAdminController", 'indexAdmin'],
     'admin/UsersAdmin/edit' => ["UsersAdminController", 'edit', ['id']],
     'admin/UsersAdmin/delete' => ["UsersAdminController", 'delete', ['id']],

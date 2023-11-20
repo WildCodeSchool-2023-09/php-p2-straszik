@@ -4,8 +4,8 @@ namespace App\Controller;
 
 use App\Model\UserManager;
 use Twig\Environment;
-use Twig\Extension\DebugExtension;
 use Twig\Loader\FilesystemLoader;
+use Twig\Extension\DebugExtension;
 
 /**
  * Initialized some Controller common features (Twig...)
