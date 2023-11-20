@@ -38,12 +38,4 @@ class ConcertManager extends AbstractManager
 
         return $statement->execute();
     }
-/*
-    public function delete($concert): bool
-    {
-        $statement = $this->pdo->prepare("DELETE FROM " . self::TABLE . " WHERE id = :id");
-        $statement->bindValue('id', $concert['id'], \PDO::PARAM_INT);
-        return $statement->execute();
-    }
-    */
 }

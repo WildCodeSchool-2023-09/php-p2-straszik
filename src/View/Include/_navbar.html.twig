@@ -16,12 +16,21 @@
     <div class="uk-navbar-right uk-hidden@m">
         <button class="uk-navbar-toggle uk-navbar-toggle-animate" uk-navbar-toggle-icon uk-toggle="target: #offcanvas-flip"></button>
     </div>
-    <div class="uk-navbar-right uk-visible@m">
-        <a href="/" class="uk-navbar-item uk-logo iconMonCompte"><img src="/assets/images/icons/Icone_monCompte.svg" alt="Mon compte"></a>
-        <ul class="uk-navbar-nav">
-            <li><a href="/login">Mon compte</a></li>
-        </ul>
-    </div>
+    
+        <div class="uk-navbar-right uk-visible@m">
+            <a class="uk-navbar-item uk-logo iconMonCompte"><img src="/assets/images/icons/Icone_monCompte.svg" alt="Mon compte"></a>
+            <ul class="uk-navbar-nav">
+            {% if session.isLogin %}
+                <li><a href="/profil">Mon compte</a></li>
+                {% if session.status == 1 %}
+                    <li><a href="/admin/dashboard">Admin</a></li>
+                {% endif %}
+            {% else %}
+                <li><a href="/login">Connexion</a></li>
+            {% endif %}
+            </ul>
+        </div>
+    
     <div id="offcanvas-flip" uk-offcanvas="flip:true, overlay: true">
         <div class="uk-offcanvas-bar">
             <ul class="uk-nav">
@@ -36,7 +45,14 @@
                 <li>
                     <div>
                         <a href="/" class="uk-logo iconMonCompte"><img src="/assets/images/icons/Icone_monCompte.svg" alt="Mon compte"></a>
-                        <a href="/login">Mon compte</a>
+                        {% if session.isLogin %}
+                            <a href="/profil">Mon compte</a>
+                            {% if session.status == 1 %}
+                                <a href="/admin/dashboard">Admin</a>
+                            {% endif %}
+                        {% else %}
+                            <a href="/login">Connexion</a>
+                        {% endif %}
                     </div>
                 </li>
             </ul>
