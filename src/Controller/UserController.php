@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+
 use App\Controller\AbstractController;
 use App\Model\UserManager;
 
@@ -37,5 +38,11 @@ class UserController extends AbstractController
             'admin/connection.html.twig',
             ['errors' => $errors, 'errorsbool' => $errorsbool]
         );
+    }
+
+    public function logout()
+    {
+        session_destroy();
+        header("Location: /");
     }
 }

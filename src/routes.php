@@ -38,8 +38,11 @@ return [
     'admin/GoodiesAdmin/edit' => ["GoodiesController", 'edit', ['id']],
     'admin/GoodiesAdmin/add' => ["GoodiesController", 'add'],
     'admin/GoodiesAdmin/delete' => ["GoodiesController", 'delete', ['id']],
+    'admin/MessagesAdmin' => ["AdminMessagesController" , "index"],
+    'admin/MessagesAdmin/delete' => ["AdminMessagesController" , "delete", ['id']],
     'register' => ['RegisterUserController', 'index'],
     'unscribeNewsletter' => ['Component\NewsletterController' , 'unscribeNewsletter'],
+    'logout' => ['UserController', 'logout']
     'admin/UsersAdmin' => ["UsersAdminController", 'indexAdmin'],
     'admin/UsersAdmin/edit' => ["UsersAdminController", 'edit', ['id']],
     'admin/UsersAdmin/delete' => ["UsersAdminController", 'delete', ['id']],
