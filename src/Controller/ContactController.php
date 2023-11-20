@@ -15,7 +15,7 @@ class ContactController extends AbstractController
         $validateNewsletter = false;
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = array_map('trim', $_POST);
-            $data = array_map('htmlspecialchars', $data);
+
             if (isset($data['contact'])) {
                 $errors = $this->validateContact($data);
 

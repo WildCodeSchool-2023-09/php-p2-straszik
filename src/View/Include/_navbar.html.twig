@@ -20,11 +20,12 @@
         <div class="uk-navbar-right uk-visible@m">
             <a class="uk-navbar-item uk-logo iconMonCompte"><img src="/assets/images/icons/Icone_monCompte.svg" alt="Mon compte"></a>
             <ul class="uk-navbar-nav">
-            {% if session.user_id %}
-                <li><a href="/profil">Mon compte</a></li>
+            {% if session.user_id %}   
+                <li><a href="/profil">Mon compte</a></li>    
                 {% if admin %}
                     <li><a href="/admin/dashboard">Admin</a></li>
                 {% endif %}
+                <li><a href="/logout">Deconnexion</a></li>
             {% else %}
                 <li><a href="/login">Connexion</a></li>
             {% endif %}

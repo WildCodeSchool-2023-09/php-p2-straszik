@@ -1,0 +1,7 @@
+section.admin-messages {
+    background-color: var(--cards_background);
+}
+
+h4.admin-empty-message {
+    font-size: 1.5rem;
+}

@@ -1,0 +1,40 @@
+{% extends 'admin.html.twig' %}
+
+{% block content %}
+    <h2 class="uk-text-lead admin-h2">Gestion des messages reçus</h2>
+    <section class="admin-messages">
+        <div class="uk-padding uk-padding-remove-bottom">
+            <h3>Liste des messages</h3>
+        </div>
+        {% if messages is empty %}
+            <h4 class="admin-empty-message uk-text-center uk-padding-large">Aucun message reçu !</h4>
+        {% else %}
+        <div class="uk-padding uk-padding-remove-top">
+            <table class="uk-table uk-table-hover uk-table-divider" >
+                <thead>
+                    <tr>
+                        <th class="admin-th">Type</th>
+                        <th class="admin-th">Email</th>
+                        <th class="admin-th">Message</th>
+                        <th class="admin-th">Supprimé le message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for message in messages %}
+
+                        <tr>
+                            <td>{{ message.type }}</td>
+                            <td>{{ message.email}}</td>
+                            <td>{{ message.message|nl2br }}</td>
+                            <td>
+                                <a href="/admin/MessagesAdmin/delete?id={{message.id}}" uk-icon="icon: trash"></a>
+                            <td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+    </section>
+
+{% endblock %}

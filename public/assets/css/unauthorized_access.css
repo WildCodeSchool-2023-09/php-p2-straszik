@@ -1,0 +1,10 @@
+body.unauthorized-access {
+    display: flex;
+    height: 100vh;
+    background-color: var(--background);
+    
+}
+
+h1.color-unthaurize-access {
+    color: var(--cards_background);
+}
