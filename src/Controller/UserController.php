@@ -1,6 +1,6 @@
 <?php
 
-namespace APP\Controller;
+namespace App\Controller;
 
 use App\Controller\AbstractController;
 use App\Model\UserManager;
@@ -37,8 +37,7 @@ class UserController extends AbstractController
         $errorsbool = !empty($errors);
         return $this->twig->render(
             'admin/connection.html.twig',
-            ['errors' => $errors, 'errorsbool' => $errorsbool,
-            'sessionData' => $_SESSION]
+            ['errors' => $errors, 'errorsbool' => $errorsbool]
         );
     }
 }
