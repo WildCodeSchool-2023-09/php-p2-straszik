@@ -26,10 +26,9 @@ return [
     'admin/ActusAdmin/edit' => ['ActusController', 'edit', ['id']],
     'admin/ActusAdmin/delete' => ['ActusController', 'delete', ['id']],
     'admin/ConcertAdmin' => ['ConcertController', 'indexAdmin',],
-    /*
-    'admin/ConcertAdmin/edit' =>['ConcertController', 'edit', ['id']],
-    'admin/ConcertAdmin/delete' =>['ConcertController', 'delete', ['id']],
-    */
+    'admin/ConcertAdmin/new' => ['ConcertController', 'new',],
+    'admin/ConcertAdmin/edit' => ['ConcertController', 'edit', ['id']],
+    'admin/ConcertAdmin/delete' => ['ConcertController', 'delete', ['id']],
     'profil' => ['AccountController', 'edit',],
     'admin/DiscoAdmin' => ['DiscographyController', 'indexAdmin',],
     'admin/DiscoAdmin/newAlbum' => ['DiscographyController', 'newAlbum',],

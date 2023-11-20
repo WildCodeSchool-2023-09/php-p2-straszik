@@ -6,7 +6,7 @@
 		<div>
 			<div class="uk-card uk-card-default uk-card-body admin-actu-card-body">
 				<h3 class="uk-card-title">Liste des concerts</h3>
-				<a class="uk-button uk-button-primary contact-insc-button admin-ajout-button" href="/admin/ActusAdmin/new" uk-icon="plus">Ajouter une nouvelle actu&ensp;</a>
+				<a class="uk-button uk-button-primary contact-insc-button admin-ajout-button" href="/admin/ConcertAdmin/new" uk-icon="plus">Ajouter un nouveau concert</a>
 				<table id="ActusTable" class="uk-table uk-table-hover uk-table-divider">
 					<thead>
 						<tr>
@@ -14,6 +14,7 @@
 							<th class="admin-th">Capacité</th>
 							<th class="admin-th">Places disponibles</th>
 							<th class="admin-th">Date</th>
+							<th class="admin-th">Affiche</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -23,10 +24,11 @@
 								<td>{{ concert.capacity }}</td>
 								<td>{{ concert.places_availables}}</td>
 								<td>{{ concert.date }}</td>
+								<td>{{ concert.affiche }}</td>
 
 								<td>
-									<a href="/admin/ConcertAdmin/edit?id={{ new.id }}" uk-icon="icon: pencil"></a>
-									<a href="/admin/ConcertAdmin/delete?id={{ new.id }}" uk-icon="icon: trash"></a>
+									<a href="/admin/ConcertAdmin/edit?id={{ concert.id }}" uk-icon="icon: pencil"></a>
+									<a href="/admin/ConcertAdmin/delete?id={{ concert.id }}" uk-icon="icon: trash"></a>
 								</td>
 							</tr>
 						{% else %}

@@ -1,13 +1,12 @@
 {% extends 'admin.html.twig' %}
 
 {% block content %}
-
 	<div class="uk-flex">
-		<h3 class="admin-h3-goodie-edit uk-text-lead uk-flex-auto">Modifier un concert</h3>
+		<h3 class="admin-h3-goodie-edit uk-text-lead uk-flex-auto">Ajouter un nouveau concert</h3>
 		<a class="admin-retour-goodies uk-button uk-button-default uk-width-1-6 uk-align-right" href="/admin/ConcertAdmin">Tous les concerts</a>
 	</div>
-	{{ dump() }}
 
-
-	{% include 'Admin/ConcertAdmin/_form.html.twig'with {'edit':"Modifier le concert"} %}
+	{{ dump(errors) }}
+	{{ dump(errorsFiles) }}
+	{% include 'Admin/ConcertAdmin/_form.html.twig' with {'add':"ajouter un nouveau concert"} %}
 {% endblock %}

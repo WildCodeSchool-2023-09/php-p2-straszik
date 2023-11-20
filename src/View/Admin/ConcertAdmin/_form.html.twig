@@ -1,50 +1,39 @@
 <form method="post" enctype="multipart/form-data">
 	<fieldset class="uk-fieldset">
 
-		<legend class="uk-legend admin-legend" style="font-size:30px">Créer une nouvelle actualité</legend>
-
 		<div class="uk-margin">
-			<input class="uk-input" type="text" name="title" placeholder="Titre" value="{{ new.title }}" aria-label="Input">
+			<input class="uk-input" type="text" name="location" placeholder="location" value="{{ concert.location }}" aria-label="Input">
 		</div>
 
 		<div class="uk-margin">
-			<textarea class="uk-textarea" rows="5" name="description" 
-			placeholder="Description" aria-label="Textarea">{{ new.description }}</textarea>
+			<textarea class="uk-textarea" rows="5" name="capacity" placeholder="capacity" aria-label="Textarea">{{ concert.capacity }}</textarea>
 		</div>
 
-        <div class="uk-margin">
-			<select name="category_id" class="uk-select admin-select-categorie">
-				<option value="1">Evénement</option>
-				<option value="2">Concert</option>
-			</select>
-        </div>
+		<div class="uk-margin">
+			<textarea class="uk-textarea" rows="5" name="places_availables" placeholder="places_availables" aria-label="Textarea">{{ concert.places_availables }}</textarea>
+		</div>
 
-		{% if new.image is defined %}
-			{% set image = new.image %}
+		<div class="uk-margin">
+			<textarea class="uk-textarea" rows="5" name="date" placeholder="date" aria-label="Textarea">{{ concert.date }}</textarea>
+		</div>
+
+		{% if concert.affiche is defined %}
+			{% set image = concert.affiche %}
 		{% else %}
 			{% set image = "../assets/images/cigognelesaccoifés.jpg" %}
 		{% endif %}
 
 		<div class="uk-margin">
 			<div uk-form-custom>
-				<input type="file" aria-label="Custom controls" name="image[]" id="image" 
-				accept="image/jpeg, image/jpg, image/png, image/webp">
-				<button class="uk-button uk-button-default" uk-icon="download" type="button" 
-				tabindex="-1">Télécharger une image</button>
+				<input type="file" aria-label="Custom controls" name="affiche" id="affiche" accept="affiche/jpeg, affiche/jpg, affiche/png, affiche/webp">
+				<button class="uk-button uk-button-default" uk-icon="download" type="button" tabindex="-1">Télécharger une image</button>
 			</div>
 		</div>
 
-		{% if new.id is defined %}
-			{% set button = "Modifier" %}
-		{% else %}
-			{% set button = "Ajouter" %}
-		{% endif %}
-
-		<input type="hidden" name="id" value="{{ new.id }}">
-
 		<div class="uk-margin">
-			<button type="submit" name="submit" class="uk-button uk-button-primary contact-insc-button 
-			admin-ajout-button">{{button}} l'actualité</button>
+			<button type="submit" class="uk-button uk-button-primary contact-insc-buttonadmin-ajout-button">{{button}}
+				Enregistrer</button>
+
 		</div>
 	</fieldset>
 </form>
