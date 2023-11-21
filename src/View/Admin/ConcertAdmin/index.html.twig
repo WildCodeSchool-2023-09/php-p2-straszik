@@ -1,0 +1,47 @@
+{% extends 'admin.html.twig' %}
+
+{% block content %}
+	<h2 class="uk-text-lead admin-h2">Gestion des concerts</h2>
+	<div uk-grid>
+		<div>
+			<div class="uk-card uk-card-default uk-card-body admin-actu-card-body">
+				<h3 class="uk-card-title">Liste des concerts</h3>
+				<a class="uk-button uk-button-primary contact-insc-button admin-ajout-button" href="/admin/ConcertAdmin/new" uk-icon="plus">Ajouter un nouveau concert</a>
+				<table id="ActusTable" class="uk-table uk-table-hover uk-table-divider">
+					<thead>
+						<tr>
+							<th class="admin-th">Localisation</th>
+							<th class="admin-th">Capacité</th>
+							<th class="admin-th">Places disponibles</th>
+							<th class="admin-th">Date</th>
+							<th class="admin-th">Affiche</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for concert in concerts %}
+							<tr>
+								<td>{{ concert.location }}</td>
+								<td>{{ concert.capacity }}</td>
+								<td>{{ concert.places_availables}}</td>
+								<td>{{ concert.date }}</td>
+								<td>{{ concert.affiche }}</td>
+
+								<td>
+									<a href="/admin/ConcertAdmin/edit?id={{ concert.id }}" uk-icon="icon: pencil"></a>
+									<a href="/admin/ConcertAdmin/delete?id={{ concert.id }}" uk-icon="icon: trash"></a>
+								</td>
+							</tr>
+						{% else %}
+							<tr>
+								<td colspan="6">pas données</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block javascript %}{% endblock %}
