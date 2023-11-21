@@ -6,18 +6,18 @@ use App\Model\AccountManager;
 
 class AccountController extends AbstractController
 {
-    public function index(): string
-    {
-        $accountManager = new AccountManager();
-        $users = $accountManager->selectAllUsers();
-        return $this->twig->render('Users/account/index.html.twig', ['users' => $users]);
-    }
-
     public function indexAdmin(): string
     {
-        $accountManager = new AccountManager();
-        $users = $accountManager->selectAllUsers();
-        return $this->twig->render('Users/Account/userAdmin.html.twig', ['users' => $users]);
+        if (!$this->admin) {
+            header('HTTP/1.1 401 Unauthorized');
+            return $this->twig->render(
+                'unauthorized_access.html.twig'
+            );
+        } else {
+            $accountManager = new AccountManager();
+            $users = $accountManager->selectAllUsers();
+            return $this->twig->render('Users/Account/userAdmin.html.twig', ['users' => $users]);
+        }
     }
 
     public function edit()
