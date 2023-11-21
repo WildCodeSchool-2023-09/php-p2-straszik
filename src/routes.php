@@ -19,7 +19,7 @@ return [
     'login' => ['UserController', 'login',],
     'forgotPassword' => ['ForgotPasswordController', 'index',],
     'contact' => ['ContactController', 'index',],
-    'concert' => ['ConcertController', 'index',],
+    'concerts' => ['ConcertController', 'index',],
     'goodies' => ['GoodiesController', 'index'],
     'admin/dashboard' => ['DashboardController', 'index',],
     'admin/actusadmin' => ['ActusController', 'indexAdmin',],

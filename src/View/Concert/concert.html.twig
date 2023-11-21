@@ -6,7 +6,7 @@
  {% for concert in concerts %}
 <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin concert-card" uk-grid>   
     <div class="uk-flex-last@s uk-card-media-right uk-cover-container concert-media-right">
-        <img src="assets/images/{{concert.affiche }}" alt="affiche" uk-cover>
+        <img src="/assets/images/concerts/{{ concert.affiche }}" alt="affiche" uk-cover>
         <canvas width="600" height="400"></canvas>
     </div>
     <div>

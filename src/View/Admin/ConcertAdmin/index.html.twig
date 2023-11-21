@@ -24,7 +24,7 @@
 								<td>{{ concert.capacity }}</td>
 								<td>{{ concert.places_availables}}</td>
 								<td>{{ concert.date }}</td>
-								<td>{{ concert.affiche }}</td>
+								<td><img src="/assets/images/concerts/{{ concert.affiche }}" width="100px"></td>
 
 								<td>
 									<a href="/admin/ConcertAdmin/edit?id={{ concert.id }}" uk-icon="icon: pencil"></a>
