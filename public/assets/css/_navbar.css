@@ -13,6 +13,9 @@ div.uk-navbar-left, div.uk-navbar-right {
 .uk-navbar-nav>li>a:hover {
     color: var(--secondary);
 }
+a.iconMonCompte img {
+    width : 2rem;
+}
 
 @media (min-width: 960px){
     .uk-navbar-left, .uk-navbar-right, [class*=uk-navbar-center] {

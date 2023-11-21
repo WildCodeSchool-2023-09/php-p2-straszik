@@ -1,0 +1,36 @@
+<form method="POST" enctype="multipart/form-data">
+
+    <div class="uk-margin">
+        <input class="uk-input" type="text" name="designation" placeholder="Désignation" value="{{ goodie.designation ? goodie.designation }}">
+        {% if errors.designation is defined %}<p class="admin-error-goodie">{{ errors.designation }}</p>{% endif %}
+    </div>
+    <div class="uk-margin">
+        <input class="uk-input" type="number" name="price" placeholder="Prix" value="{{ goodie.price ? goodie.price }}">
+        {% if errors.price is defined %}<p class="admin-error-goodie">{{ errors.price }}</p>{% endif %}
+        {% if errors.notPrice is defined %}<p class="admin-error-goodie">{{ errors.notPrice }}</p>{% endif %}
+    </div>
+    <div class="uk-margin">
+        <textarea class="uk-textarea" type="text" name="description" placeholder="Description du goodie" rows="10">{{ goodie.description ? goodie.description }}</textarea>
+        {% if errors.description is defined %}<p class="admin-error-goodie">{{ errors.description }}</p>{% endif %}
+    </div>
+
+    <div class="uk-margin">
+        <div uk-form-custom>
+            <input type="file" aria-label="Custom controls" name="image" id="image" 
+				accept="image/jpeg, image/jpg, image/png, image/webp">
+            <button class="uk-button uk-button-default" type="button" tabindex="-1">Télécharger mon image<span class="uk-margin-small-left" uk-icon="icon: download"></span></button>
+        </div>
+        {% if errorsFile is not empty %}
+            <div>
+                <ul  class="admin-error-goodie">
+                    {% for errorFile in errorsFile %}
+                        <li>{{ errorFile }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+    <div class=" uk-margin-medium">
+        <button class="admin-add-goodie uk-button uk-button-default">{{ add }} {{ edit }}</button>
+    </div>
+</form>

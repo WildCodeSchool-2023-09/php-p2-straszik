@@ -1,0 +1,91 @@
+{% extends 'admin.html.twig' %}
+
+{% block content %}
+<h2 class="uk-text-lead admin-h2">Dashboard administrateur</h2>
+	<section class='admin-actuality'>
+		<h1 class="uk-heading-line uk-text-center admin-heading-line">
+		<span>Actualités</span></h1>
+		<h3 class="uk-card-title admin-h3-card">Dernières actualités</h3>
+		<a class="uk-button uk-button-primary contact-insc-button admin-ajout-button" href="/admin/actusadmin" 
+		uk-icon="icon: file-edit">Editer les articles&ensp;</a>
+		<div class="uk-child-width-1-2@m actu-uk-hild admin-actus-cards">
+			<div class="uk-card disco-cards" uk-grid>
+				{% for new in news %}
+				<div class="uk-card uk-card-default actu-uk-card">
+					<div class="uk-card-media-top actu-card-top">
+						<img src="/assets/images/actus/{{new.image}}" height="368px" alt="image actu" class="actu-img">
+					</div>
+					<div class="uk-card-body actu-card-body">
+						<h2 class="uk-card-title actu-card-title">{{new.title}}</h2>
+						<p class="card-text describeActu">{{new.description}}</p>
+					</div>
+            	</div>
+            	{% endfor %}
+    		</div>
+		</div>
+	</section>
+	
+	<section class='admin-discography'>
+		<h1 class="uk-heading-line uk-text-center admin-heading-line">
+		<span>Discographie</span></h1>
+		<h3 class="uk-card-title admin-h3-card">Derniers albums</h3>
+		<a class="uk-button uk-button-primary contact-insc-button admin-ajout-button" href="" 
+		uk-icon="icon: file-edit">Editer les albums&ensp;</a>
+		<div class="uk-child-width-1-2@m"uk-grid>
+        <div class="uk-card disco-cards">
+            {% for album in albums %}
+            <div class="uk-card uk-card-default disco-card-default">
+                <div class="uk-card-media-top disco-card-media-top">
+                    <img src="../assets/images/albums/{{album.image}}" alt="image album" class="disco-img">
+                </div>
+                <div class="uk-card-body disco-card-body">
+                    <h2 class="uk-card-title disco-card-title">{{album.title}}</h2>
+                    <p class="albumYear">{{album.year}}</p>
+                    <table class="uk-table disco-td">
+                        <h6 class="disco-h6">Playlist</h6>
+                        <tbody>
+                            {% for song in songs %}
+                            {% if song.album_id == album.id %} 
+                               <tr>
+                                    <td class="disco-td">{{song.title}}</td>
+                                    <td class="disco-td">{{song.time}}</td>
+                                </tr>
+                            {% endif %}
+                            {% endfor %}
+                         </tbody>
+                    </table>
+                </div>
+            </div>
+            {% endfor %}
+	</section>
+
+	<section class='admin-concert'>
+		<h1 class="uk-heading-line uk-text-center admin-heading-line">
+		<span>Concerts</span></h1>
+		<h3 class="uk-card-title admin-h3-card">Derniers concerts</h3>
+		<a class="uk-button uk-button-primary contact-insc-button admin-ajout-button" href="" 
+		uk-icon="icon: file-edit">Editer les concerts&ensp;</a>
+		<div class="uk-child-width-1-2@m actu-uk-hild ">
+			<div class="uk-card actu-cards" uk-grid>
+				{% for concert in concerts %}
+				<div class="uk-card uk-card-default actu-uk-card admin-actus-cards">
+					<div class="uk-card-media-top actu-card-top">
+						<img src="/assets/images/actus/{{concert.affiche}}" height="368px" alt="affiche" class="affiche-img">
+					</div>
+					<div class="uk-card-body actu-card-body">
+						<h2 class="uk-card-title actu-card-title">{{concert.date}}</h2>
+						<p class="card-text describeActu">{{concert.location}}</p>
+					</div>
+            	</div>
+            	{% endfor %}
+    		</div>
+		</div>
+	</section>
+	<!--<div uk-grid>
+		<div>
+			<div class="uk-card uk-card-default uk-card-body admin-card-body">
+				<h3 class="uk-card-title admin-h3-card">Nombre d'utilisateurs</h3>
+				<p>{{customers|length }}</p>
+			</div>
+		</div>
+{% endblock %}

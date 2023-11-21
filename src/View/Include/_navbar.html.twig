@@ -7,7 +7,7 @@
             <li><a href="/">Accueil</a></li>
             <li><a href="/groupe">Le groupe</a></li>
             <li><a href="/discographie">Discographie</a></li>
-            <li><a href="/actus">Actualité</a></li>
+            <li><a href="/actus">Actualités</a></li>
             <li><a href="/concerts">Concerts</a></li>
             <li><a href="/goodies">Goodies</a></li>
             <li><a href="/contact">Contact</a></li>
@@ -16,27 +16,44 @@
     <div class="uk-navbar-right uk-hidden@m">
         <button class="uk-navbar-toggle uk-navbar-toggle-animate" uk-navbar-toggle-icon uk-toggle="target: #offcanvas-flip"></button>
     </div>
-    <div class="uk-navbar-right uk-visible@m">
-        <a href="/" class="uk-navbar-item uk-logo"><img src="/assets/images/favicon.png" alt="Mon compte"></a>
-        <ul class="uk-navbar-nav">
-            <li><a href="/login">Mon compte</a></li>
-        </ul>
-    </div>
+    
+        <div class="uk-navbar-right uk-visible@m">
+            <a class="uk-navbar-item uk-logo iconMonCompte"><img src="/assets/images/icons/Icone_monCompte.svg" alt="Mon compte"></a>
+            <ul class="uk-navbar-nav">
+            {% if session.user_id %}   
+                <li><a href="/profil">Mon compte</a></li>    
+                {% if admin %}
+                    <li><a href="/admin/dashboard">Admin</a></li>
+                {% endif %}
+                <li><a href="/logout">Deconnexion</a></li>
+            {% else %}
+                <li><a href="/login">Connexion</a></li>
+            {% endif %}
+            </ul>
+        </div>
+    
     <div id="offcanvas-flip" uk-offcanvas="flip:true, overlay: true">
         <div class="uk-offcanvas-bar">
             <ul class="uk-nav">
                 <li><a href="/">Accueil</a></li>
                 <li><a href="/groupe">Le groupe</a></li>
                 <li><a href="/discographie">Discographie</a></li>
-                <li><a href="/actus">Actualité</a></li>
+                <li><a href="/actus">Actualités</a></li>
                 <li><a href="/concerts">Concerts</a></li>
                 <li><a href="/goodies">Goodies</a></li>
                 <li><a href="/contact">Contact</a></li>
                 <li class="uk-nav-divider"></li>
                 <li>
                     <div>
-                        <a href="/" class="uk-logo"><img src="/assets/images/favicon.png" alt="Mon compte"></a>
-                        <a href="/login">Mon compte</a>
+                        <a href="/" class="uk-logo iconMonCompte"><img src="/assets/images/icons/Icone_monCompte.svg" alt="Mon compte"></a>
+                        {% if session.user_id %}
+                            <a href="/profil">Mon compte</a>
+                            {% if admin %}
+                                <a href="/admin/dashboard">Admin</a>
+                            {% endif %}
+                        {% else %}
+                            <a href="/login">Connexion</a>
+                        {% endif %}
                     </div>
                 </li>
             </ul>

@@ -1,0 +1,29 @@
+<form method="post" enctype="multipart/form-data">
+	<fieldset class="uk-fieldset">
+
+		<legend class="uk-legend admin-legend">Modifier un concert</legend>
+
+		<div class="uk-margin">
+			<input class="uk-input" type="text" name="location" placeholder="location" value="{{ concert.location }}" aria-label="Input">
+		</div>
+
+		<div class="uk-margin">
+			<textarea class="uk-textarea" rows="5" name="capacity" placeholder="capacity" aria-label="Textarea">{{ concert.capacity }}</textarea>
+		</div>
+
+		<div class="uk-margin">
+			<textarea class="uk-textarea" rows="5" name="places_availables" placeholder="places_availables" aria-label="Textarea">{{ concert.places_availables }}</textarea>
+		</div>
+
+		<div class="uk-margin">
+			<textarea class="uk-textarea" rows="5" name="date" placeholder="date" aria-label="Textarea">{{ concert.cdate }}</textarea>
+		</div>
+
+
+		<div class="uk-margin">
+			<button type="submit" name="submit" class="uk-button uk-button-primary contact-insc-button
+																			admin-ajout-button">{{button}}
+				l'actualité</button>
+		</div>
+	</fieldset>
+</form>

@@ -1,0 +1,53 @@
+<aside class="uk-width-1-4 uk-margin-medium-left uk-visible@s">
+    <h3>Réseaux sociaux</h3>
+    <ul  class="aside_list_reseau uk-flex ">
+        <li>
+            <a href="https://www.facebook.com/dGruppa.lesassoiffes/?locale=fr_FR">
+                <img src="/assets/images/icons/Icone_Facebook.svg" alt="Logo Facebook" uk-svg>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.instagram.com/les_assoiffes/">
+                <img src="/assets/images/icons/Icone_Instagram.svg" alt="Logo Instagram" uk-svg>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.youtube.com/@LesAssoiffes">
+                <img src="/assets/images/icons/Icone_Youtube.svg" alt="Logo Youtube" uk-svg>
+            </a>
+        </li>
+    </ul>
+
+
+    <div>
+        <form action="" method="POST">
+        <div class="uk-flex uk-flex-column">
+            <label for="newletter">Inscrivez vous à notre newsletter !</label>
+            <input type="email" name="email" id="newletter" placeholder="Votre email" class="uk-width-1-2"></input>
+            {% if validateInscription %}
+                <ul class="aside_list">
+                    <li>Inscription validé !</li>
+                </ul>
+            {% endif %}
+            {% if errors is not empty %}
+                <ul class="aside_errors">
+                {% for error in errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        <button class="uk-button uk-button-default uk-margin-small-top" name="registerNewsletter">Envoyer !</button>
+        <div class="uk-margin-small-top">
+            <label class="contact-checkbox"><input class="uk-checkbox" type="checkbox" name="check_newsletter" checked>Vous acceptez de recevoir nos derniers articles et dates de concert par mail</label>
+            <p class="contact-rgpd">Vous affirmez avoir pris connaissance de notre Politique de condifentialité.</br>
+            Vous pouvez vous désinscrire à tout moment à l'aide des liens de désinscription</br>
+            ou en nous contactant à l'adresse contact@assoifés.alsace</p>
+        </div>
+        </form>
+    </div>
+
+    <div class="uk-margin-medium-top"> 
+        <h3><a href="/goodies">Visitez notre boutique !</a></h3>
+    </div>
+</aside>
