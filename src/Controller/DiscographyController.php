@@ -12,7 +12,7 @@ class DiscographyController extends AbstractController
         $albums = $discographyManager->selectAllAlbum();
         $songs = $discographyManager->selectAllSongs();
         return $this->twig->render(
-            'discography/discography.html.twig',
+            'Discography/discography.html.twig',
             ['albums' => $albums, 'songs' => $songs]
         );
     }

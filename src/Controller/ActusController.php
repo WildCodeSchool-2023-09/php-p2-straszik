@@ -26,8 +26,8 @@ class ActusController extends AbstractController
             $categories = $actusManager->selectAllCategories();
             $news = $actusManager->selectAllNews();
             return $this->twig->render('Admin/ActusAdmin/index.html.twig', [
-                'categories' => $categories, '
-                news' => $news
+                'categories' => $categories,
+                'news' => $news
             ]);
         }
     }

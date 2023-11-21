@@ -24,7 +24,7 @@ class DashboardController extends AbstractController
             $songs = $discographyManager->selectAllSongs();
 
             return $this->twig->render(
-                'Admin/dashboard/index.html.twig',
+                'Admin/Dashboard/index.html.twig',
                 ['categories' => $categories, 'news' => $news,
                 'albums' => $albums, 'songs' => $songs
                 ]

@@ -74,8 +74,8 @@
 @media screen and (max-width: 768px){
     div.uk-card.disco-cards {
         grid-template-columns: 1fr;
-        width: 28rem;
-        margin: 7.5rem;
+        width: fit-content;
+        margin: auto;
     }
     .disco-card-default {
         grid-template-columns: 1fr;
@@ -85,6 +85,12 @@
         margin-bottom: 2rem;
     }
     .disco-card-body {
-    padding-bottom: 2rem;
+        padding:0rem;
+        padding-left:1rem;
+        padding-bottom:0.5rem;
+    }
+    .disco-card-title {
+        padding-top:0rem;
+        line-height:0.8;
     }
 }
