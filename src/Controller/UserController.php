@@ -34,7 +34,7 @@ class UserController extends AbstractController
 
         $errorsbool = !empty($errors);
         return $this->twig->render(
-            'admin/connection.html.twig',
+            'Admin/connection.html.twig',
             ['errors' => $errors, 'errorsbool' => $errorsbool]
         );
     }

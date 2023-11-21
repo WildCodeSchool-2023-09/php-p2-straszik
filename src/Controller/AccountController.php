@@ -10,7 +10,7 @@ class AccountController extends AbstractController
     {
         $accountManager = new AccountManager();
         $users = $accountManager->selectAllUsers();
-        return $this->twig->render('Users/account/index.html.twig', ['users' => $users]);
+        return $this->twig->render('Users/Account/index.html.twig', ['users' => $users]);
     }
 
     public function indexAdmin(): string
