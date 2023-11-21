@@ -19,7 +19,7 @@ class NewsletterController
         }
 
         if (!isset($verif['check_newsletter']) && isset($verif['registerNewsletter'])) {
-            $errors["notcheck"] = "La case n'a pas été coché !";
+            $errors["notcheck"] = "La case n'a pas été cochée !";
         }
 
         return $errors;

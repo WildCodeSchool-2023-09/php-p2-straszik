@@ -75,11 +75,25 @@ iframe {
     }
 }
 @media screen and (max-width: 768px){
-    .actu-cards {
+    div.uk-card.actu-cards {
         grid-template-columns: 1fr;
+        width: fit-content;
+        margin: auto;
     }
     .actu-uk-card {
         grid-template-columns: 1fr;
         width: auto;
+    }
+    .actu-card-media-top {
+        margin-bottom: 2rem;
+    }
+    .actu-card-body {
+        padding:0rem;
+        padding-left:1rem;
+        padding-bottom:0.5rem;
+    }
+    .titreActu {
+        padding-top:0rem;
+        line-height:0.8;
     }
 }
