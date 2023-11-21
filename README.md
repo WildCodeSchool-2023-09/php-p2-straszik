@@ -24,5 +24,13 @@ define('APP_DB_PASSWORD', 'php_p2_straszik');
 6. Go to `localhost:8000` with your favorite browser.
 7. From this starter kit, create your own web application.
 
+## Compte admin et utilisateur !
 
+Administrateur
+Email : admin@admin.fr
+mot de passe : admin
+
+Utilisateur
+Email : user@user.fr
+mot de passe : user
 
