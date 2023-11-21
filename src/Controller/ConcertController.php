@@ -9,8 +9,8 @@ class ConcertController extends AbstractController
     public function index(): string
     {
         $concertManager = new ConcertManager();
-        $concert = $concertManager->selectAllConcert();
-        return $this->twig->render('concert/index.html.twig', ['location' => $concert]);
+        $concerts = $concertManager->selectAllConcert();
+        return $this->twig->render('Concert/concert.html.twig', ['concerts' => $concerts]);
     }
 
     public function indexAdmin(): string
