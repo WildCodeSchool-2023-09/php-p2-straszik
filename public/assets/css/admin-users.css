@@ -41,3 +41,7 @@ a.admin-retour-users:hover {
 section.admin-users-form {
     width: 70%;
 }
+.account-create-button {
+    color: var(--secondary);
+    margin-top:1rem;
+}

@@ -17,22 +17,24 @@
 						</tr>
 					</thead>
 					<tbody>
-						{% for new in news %}
-							<tr>
-								<td>{{ new.title }}</td>
-								<td>{{ new.description }}</td>
-								<td>{{ new.name}}</td>
-								<td><img src="/uploads/{{new.image}}" width="100px" alt="{{ new.title }}"/></td>
-								<td>
-									<a href="/admin/ActusAdmin/edit?id={{ new.id }}" uk-icon="icon: pencil"></a>
-									<a href="/admin/ActusAdmin/delete?id={{ new.id }}" uk-icon="icon: trash"></a>
-								</td>
-							</tr>
+						{% if news is defined %}
+							{% for new in news %}
+								<tr>
+									<td>{{ new.title }}</td>
+									<td>{{ new.description }}</td>
+									<td>{{ new.name}}</td>
+									<td><img src="/uploads/{{new.image}}" width="100px" alt="{{ new.title }}"/></td>
+									<td>
+										<a href="/admin/ActusAdmin/edit?id={{ new.id }}" uk-icon="icon: pencil"></a>
+										<a href="/admin/ActusAdmin/delete?id={{ new.id }}" uk-icon="icon: trash"></a>
+									</td>
+								</tr>
+								{% endfor %}
 						{% else %}
 							<tr>
-								<td colspan="6">pas données</td>
+								<td colspan="6">pas de données</td>
 							</tr>
-						{% endfor %}
+						{% endif %}
 					</tbody>
 				</table>
 			</div>
