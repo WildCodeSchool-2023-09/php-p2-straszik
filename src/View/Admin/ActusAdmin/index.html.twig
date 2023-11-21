@@ -1,13 +1,12 @@
 {% extends 'admin.html.twig' %}
 
 {% block content %}
-<h2 class="uk-text-lead admin-h2">Gestion des actualités</h2>	
+	<h2 class="uk-text-lead admin-h2">Gestion des actualités</h2>
 	<div uk-grid>
 		<div>
 			<div class="uk-card uk-card-default uk-card-body admin-actu-card-body">
 				<h3 class="uk-card-title">Liste des actualités</h3>
-				<a class="uk-button uk-button-primary contact-insc-button admin-ajout-button" 
-				href="/admin/ActusAdmin/new" uk-icon="plus">Ajouter une nouvelle actu&ensp;</a>
+				<a class="uk-button uk-button-primary contact-insc-button admin-ajout-button" href="/admin/ActusAdmin/new" uk-icon="plus">Ajouter une nouvelle actu&ensp;</a>
 				<table id="ActusTable" class="uk-table uk-table-hover uk-table-divider">
 					<thead>
 						<tr>
@@ -18,7 +17,6 @@
 						</tr>
 					</thead>
 					<tbody>
-
 						{% for new in news %}
 							<tr>
 								<td>{{ new.title }}</td>
@@ -43,6 +41,4 @@
 
 {% endblock %}
 
-{% block javascript %}
-
-{% endblock %}
+{% block javascript %}{% endblock %}
